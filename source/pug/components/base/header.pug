@@ -2,26 +2,26 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "#table",
+        text: "Таблица"
       },
       {
-        href: "#",
-        text: "Страница 2"
+        href: "#form",
+        text: "Форма"
       },
       {
-        href: "#",
-        text: "Страница 3"
+        href: "#gallery",
+        text: "Галерея"
       },
     ]
 
   header.header(class=headerMods)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
+      //- if(currentUrl === "index.html")
+      //-   //- lighthouse снимает 10 баллов SEO за <a> без href
+      //-   span.header__logo Логотип
+      //- else
+      //-   a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
       nav.main-nav
         button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
