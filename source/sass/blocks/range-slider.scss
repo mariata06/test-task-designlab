@@ -1,0 +1,10 @@
+.range-slider__scale {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-smoky;
+  }
+}

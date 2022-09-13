@@ -27,4 +27,17 @@
       opacity: 0.8;
     }
   }
+
+  &--bath,
+  &--sauna,
+  &--hamam,
+  &--all {
+    color: $color-default-white;
+    background-color: $color-navy-blue;
+    border-radius: 16px;
+    padding: 4px 18px;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 500;
+  }
 }

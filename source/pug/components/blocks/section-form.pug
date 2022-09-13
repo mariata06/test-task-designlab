@@ -9,19 +9,27 @@ mixin section-form()
           .input__wrapper
             label(for="name-project") Название
             input(type="text" id="name-project" required)
-          .input__wrapper
+          .input__wrapper.range-slider
             label(for="price") Стоимость
-            input(type="range" id="price" value="20 000 000 P" min="10" max="40+" step="10")
+            input(type="number" value="20000000" min="0" max="100000000" step="10000000")
+            input(type="range" id="range-input" oninput="updateVal(this.value)" value="20" min="10" max="40" step="10")
+            //- .range-thumb(id="range-value")
+            .range-slider__scale
+              span 10
+              span 20
+              span 30
+              span 40+
+
           .input__wrapper.input__wrapper--number
             label(for="area") Площадь
             button(type="button" aria-label="уменьшить" class="button-minus").btn.btn--minus -
             input(type="number" id="area" value="200")
             button(type="button" aria-label="увеличить" class="button-minus").btn.btn--plus +
           .input__wrapper.input__wrapper--toggle
-            label(for="whitebox") Отделка
+            span Вайтбокс
+            label(for="whitebox").input__wrapper-label Вайтбокс
             input(type="checkbox" id="whitebox" checked)
             span.input__wrapper-toggle
-            span.input__wrapper-label Вайтбокс
           .input__wrapper
             label(for="tel") Телефон
             input(type="tel" id="tel" value="+7" required)
@@ -32,10 +40,11 @@ mixin section-form()
             label Удобства
             select
               option Любые
-              option Балкон
-              option Лоджия
-              option Терраса
-              option Камин
+              option Кирпичный
+              option Деревянный
+              option Монолитный
+              option Каркасный
+              option Щитовой
             +icon("icon-select", 24, 24)
           .input__wrapper
             label(for="user-password") Пароль

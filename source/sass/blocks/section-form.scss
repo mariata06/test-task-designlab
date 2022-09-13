@@ -1,6 +1,7 @@
 .section-form {
   max-width: 842px;
   margin: 0 auto;
+  padding-bottom: 104px;
 
   .container {
     padding: 0;
@@ -131,6 +132,8 @@
 
     input[type="range"] {
       width: 222px;
+      padding-left: 0;
+      padding-right: 0;
     }
     input[type="text"] {
       width: 650px;
@@ -173,19 +176,23 @@
       width: 125px;
       flex-direction: unset;
       flex-wrap: wrap;
-
-      label {
-        width: 100%;
-      }
     }
     .input__wrapper-label {
       font-size: 16px;
       line-height: 24px;
       margin-left: auto;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      text-align: right;
+      z-index: 10;
+      cursor: pointer;
     }
 
     input[type="checkbox"] ~ .input__wrapper-toggle {
-      position: relative;
+      position: absolute;
+      top: 60px;
       height: 24px;
       width: 44px;
       display: inline;
