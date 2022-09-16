@@ -6,7 +6,7 @@
   color: $color-default-white;
   background-color: $color-default-white;
   border: none;
-  border: 1px solid #E1E1E1;
+  // border: 1px solid #E1E1E1;
   cursor: pointer;
 
   transition: opacity $trans-default;
@@ -32,12 +32,17 @@
   &--sauna,
   &--hamam,
   &--all {
-    color: $color-default-white;
-    background-color: $color-navy-blue;
+    color: $color-night-rider;
+    background-color: $color-solitude;
     border-radius: 16px;
     padding: 4px 18px;
     font-size: 16px;
     line-height: 32px;
     font-weight: 500;
+
+    &.is-active {
+      color: $color-default-white;
+      background-color: $color-navy-blue;
+    }
   }
 }

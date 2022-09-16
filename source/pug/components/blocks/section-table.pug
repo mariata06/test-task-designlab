@@ -4,34 +4,34 @@ mixin section-table()
       h2 Таблица
       p Должна быть адаптивной, без дублирования информации.
       table.table
-        tr
-          th Название
-          th Материал
-          th Размер
-          th Цена
-        tr
-          td Стеновой паркет
-          td Ольха
-          td 13 × 78 × 300 мм
-          td 52 ₽
-            button(type="button").btn В корзину
-        tr
-          td Стеновой паркет
-          td Ольха
-          td 13 × 78 × 600 мм
-          td 112 ₽
-            button(type="button").btn В корзину
-        tr
-          td Доска для пола, сорт А
-          td Лиственница
-          td 27 × 134 × 2000 мм
-          td 1062 ₽
-            button(type="button").btn В корзину
-        tr
-          td Вагонка
-          td Термо-абаш
-          td 19 × 90 × 2000 мм
-          td 1009 ₽
-            button(type="button").btn В корзину
+        thead
+          tr
+            each title in ['Название','Материал','Размер','Цена']
+              th=title
+        tbody
+          tr
+            td(data-label="Название") Стеновой паркет
+            td(data-label="Материал") Ольха
+            td(data-label="Размер") 13 	&#215; 78 	&#215; 300 мм
+            td(data-label="Цена") 52 ₽
+              button(type="button").btn.table__button В корзину
+          tr
+            td(data-label="Название") Стеновой паркет
+            td(data-label="Материал") Ольха
+            td(data-label="Размер") 13 	&#215; 78 	&#215; 600 мм
+            td(data-label="Цена") 112 ₽
+              button(type="button").btn.table__button В корзину
+          tr
+            td(data-label="Название") Доска для пола, сорт А
+            td(data-label="Материал") Лиственница
+            td(data-label="Размер") 27 	&#215; 134 	&#215; 2000 мм
+            td(data-label="Цена") 1062 ₽
+              button(type="button").btn.table__button В корзину
+          tr
+            td(data-label="Название") Вагонка
+            td(data-label="Материал") Термо-абаш
+            td(data-label="Размер") 19 	&#215; 90 	&#215; 2000 мм
+            td(data-label="Цена") 1009 ₽
+              button(type="button").btn.table__button В корзину
 
 

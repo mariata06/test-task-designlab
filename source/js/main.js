@@ -4,8 +4,10 @@ import {initCustomSelect} from './modules/form/init-custom-select';
 import {initFormValidate} from './modules/form/init-form-validate';
 import {initCalculateArea} from './modules/init-calculate-area';
 import {initGallerySlider} from './modules/init-gallery-slider';
-import {initFilter} from './modules/init-filter';
+// import {initFilter} from './modules/init-filter';
 import {initPriceRange} from './modules/init-price-range';
+import {initValidateEmail} from './modules/init-validate-email';
+import {initInputTags} from './modules/init-input-tags';
 
 // ---------------------------------
 
@@ -16,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   iosVhFix();
   initCalculateArea();
-  initFilter();
+  // initFilter();
   initPriceRange();
 
   // Modules
@@ -29,6 +31,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initCustomSelect();
     initFormValidate();
     initGallerySlider();
+    initValidateEmail();
+    initInputTags();
   });
 });
 

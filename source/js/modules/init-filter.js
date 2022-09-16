@@ -1,27 +1,28 @@
-const initFilter = () => {
-  let sliderItems = document.querySelectorAll('.gallery__slide');
-  let filterBtn = document.querySelectorAll('.btn__filter');
 
-  for (let i = 0; i < filterBtn.length; i++) {
+// const initFilter = () => {
+//   let sliderItems = document.querySelectorAll('.gallery__slide');
+//   let filterBtn = document.querySelectorAll('.btn__filter');
 
-    filterBtn[i].addEventListener('click', (e) => {
-      e.preventDefault();
+//   for (let i = 0; i < filterBtn.length; i++) {
 
-      const filter = e.target.dataset.filter;
+//     filterBtn[i].addEventListener('click', (e) => {
+//       e.preventDefault();
 
-      sliderItems.forEach((item) => {
-        if (filter === 'all') {
-          item.style.display = 'block';
-        } else {
-          if (item.dataset.type === filter) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        }
-      });
-    });
-  }
-};
+//       const filter = e.target.dataset.filter;
 
-export {initFilter};
+//       sliderItems.forEach((item) => {
+//         if (filter === 'all') {
+//           item.style.display = 'block';
+//         } else {
+//           if (item.dataset.type === filter) {
+//             item.style.display = 'block';
+//           } else {
+//             item.style.display = 'none';
+//           }
+//         }
+//       });
+//     });
+//   }
+// };
+
+// export {initFilter};

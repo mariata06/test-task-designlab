@@ -6,40 +6,57 @@
 .gallery {
   // max-width: 1920px;
   margin: 0 auto;
+  padding-bottom: 164px;
   // .container {
   //   max-width: 1792px;
   // }
 
+  &__intro {
+    padding: 0 16px;
+  }
+
+  .container {
+    max-width: unset;
+    @include vp-767 {
+      padding: 0 16px;
+    }
+  }
+
   &__slider {
     width: 100%;
-    // height: auto;
-    // margin-left: auto;
-    // margin-right: auto;
     margin-top: 63px;
     overflow: hidden;
     position: relative;
   }
 
   &__slider-track {
-    height: 532px;
-    display: flex;
-    // flex-wrap: wrap;
-    justify-content: space-between;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 430px);
+    grid-auto-flow: column dense;
+    grid-template-rows: repeat(2, 242px);
+    grid-template-rows: 242px 242px;
+    grid-gap: 24px;
+    max-height: 508px;
+
+    @include vp-767 {
+      grid-template-columns: repeat(auto-fill, 167px);
+      grid-template-rows: 94px 94px;
+      grid-gap: 10px;
+    }
   }
 
   &__slide {
-    margin-bottom: 24px;
     width: 430px;
     height: 242px;
     text-align: center;
     font-size: 18px;
     background: #fff;
-    // height: 100px;
-    // width:100%;
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @include vp-767 {
+      width: 167px;
+      height: 94px;
+    }
   }
 
   p {
@@ -55,6 +72,7 @@
 
   &__btn-prev,
   &__btn-next {
+    cursor: pointer;
     border: none;
     position: absolute;
     bottom: 45%;
@@ -63,10 +81,30 @@
     height: 80px;
     border-radius: 100px;
     background-color: $color-default-white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05), 0px 0.1px 0.3px rgba(0, 0, 0, 0.014), 0px 0.3px 0.8px rgba(0, 0, 0, 0.02), 0px 0.5px 1.5px rgba(0, 0, 0, 0.025), 0px 0.9px 2.7px rgba(0, 0, 0, 0.03), 0px 1.7px 5px rgba(0, 0, 0, 0.036);
+    transition: background-color $trans-default;
+
+    @include vp-767 {
+      display: none;
+    }
+
+    svg {
+      color: $color-navy-blue;
+      transition: color $trans-default;
+    }
 
     &:disabled {
       svg {
         opacity: 0.7;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-navy-blue;
+
+      svg {
+        color: $color-default-white;
       }
     }
   }
@@ -80,7 +118,5 @@
 
   &__filter {
     text-align: center;
-    // justify-content: center;
-    // display: flex;
   }
 }

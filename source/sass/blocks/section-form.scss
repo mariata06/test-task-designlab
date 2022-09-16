@@ -5,38 +5,86 @@
 
   .container {
     padding: 0;
+
+    @include vp-767 {
+      padding: 0 16px;
+    }
   }
 
   .section-form__wrapper {
-    background: #F5F5F7;
+    background: $color-chost-white;
     border-radius: 20px;
     padding: 80px 96px;
+
+    @include vp-767 {
+      padding: 16px;
+      border-radius: 0;
+      padding: 32px;
+    }
   }
 
   .section-form__title {
     font-size: 48px;
     line-height: 64px;
+
+    @include vp-767 {
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+      line-height: 56px;
+    }
   }
 
   p {
     margin: 0;
     margin-bottom: 55px;
+
+    @include vp-374 {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    h3 {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -2px;
+
+      @include vp-767 {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
     input {
       font-size: 16px;
       line-height: 24px;
       height: 56px;
       outline: none;
-      border: 1px solid #E1E1E1;
+      border: 1px solid $color-gainsboro;
       border-radius: 4px;
       width: 100%;
       padding-left: 16px;
       padding-right: 16px;
+      transition: border-color $trans-default;
+
+      @include vp-767 {
+        width: 100%;
+      }
+
+        &:hover,
+        &:focus {
+          border-color: $color-navy-blue;
+        }
+
+        // &:invalid {
+        //   border: 1px solid $color-amaranth;
+        // }
     }
     input::placeholder {
       color: $color-santas-grey;
@@ -44,14 +92,20 @@
       line-height: 24px;
     }
 
-    .select__wrapper {
-      display: flex;
-      flex-direction: column;
+    .input__wrapper--select {
+      @include vp-374 {
+        width: 100%;
+      }
     }
 
-    .input__wrapper ~ input[type="number"] {
-      width: 222px;
-    }
+    // .select__wrapper {
+    //   display: flex;
+    //   flex-direction: column;
+    // }
+
+    // .input__wrapper ~ input[type="number"] {
+    //   width: 222px;
+    // }
 
     .input__wrapper {
       position: relative;
@@ -59,14 +113,18 @@
       flex-direction: column;
       margin-top: 35px;
 
+      @include vp-767 {
+        width: 100%;
+      }
+
       label {
         margin-bottom: 10px;
       }
 
       button {
         position: absolute;
-        width: 56px;
-        height: 56px;
+        width: 54px;
+        height: 54px;
         border: 1px solid transparent;
         color: $color-navy-blue;
         font-size: 30px;
@@ -74,16 +132,26 @@
       }
 
       .btn--minus {
-        border: 1px solid #E1E1E1;
-        left: 0;
-        bottom: 0;
+        border: 1px solid $color-gainsboro;
+        left: 1px;
+        bottom: 1px;
         border-radius: 4px 0px 0px 4px;
       }
       .btn--plus {
-        border: 1px solid #E1E1E1;
-        right: 0;
-        bottom: 0;
+        border: 1px solid $color-gainsboro;
+        right: 1px;
+        bottom: 1px;
         border-radius: 0px 4px 4px 0px;
+      }
+
+      .btn--minus,
+      .btn--plus {
+        transition: color $trans-default, background-color $trans-default;
+
+        &:hover {
+          background-color: $color-navy-blue;
+          color: $color-default-white;
+        }
       }
     }
 
@@ -98,6 +166,13 @@
       color: $color-default-white;
       background-color: $color-navy-blue;
       margin-top: 48px;
+      padding-left: 28px;
+      padding-right: 28px;
+
+      @include vp-767 {
+        margin: 0 auto;
+        margin-top: 48px;
+      }
     }
 
     select {
@@ -105,23 +180,23 @@
       width: 309px;
       height: 56px;
       border-radius: 4px;
-      border: 1px solid #E1E1E1;
+      border: 1px solid $color-gainsboro;
       padding-left: 16px;
       padding-right: 16px;
       font-size: 16px;
       line-height: 24px;
       color: $color-black-russain;
+      transition: border-color $trans-default;
+      outline: none;
 
-      // &::before {
-      //   content: url('../img/sprite/icon-select.svg');
-      //   position: absolute;
-      //   display: block;
-      //   top: 0;
-      //   right: 0;
-      //   width: 24px;
-      //   height: 24px;
-      //   z-index: 1000;
-      // }
+      @include vp-767 {
+        width: 100%;
+      }
+
+        &:hover,
+        &:focus {
+          border-color: $color-navy-blue;
+        }
     }
 
     select ~ svg {
@@ -134,24 +209,78 @@
       width: 222px;
       padding-left: 0;
       padding-right: 0;
+
+      @include vp-767 {
+        width: 100%;
+      }
     }
     input[type="text"] {
       width: 650px;
+
+      @include vp-767 {
+        width: 100%;
+      }
     }
+
+    .input__wrapper--area .input__container {
+      position: relative;
+    }
+
     input[type="number"] {
       width: 222px;
       text-align: center;
       color: $color-black-russain;
+
+      @include vp-767 {
+        width: 100%;
+      }
     }
     input[type="tel"] {
       width: 222px;
+
+      @include vp-767 {
+        width: 100%;
+      }
     }
     input[type="email"] {
       width: 397px;
+
+      @include vp-767 {
+        width: 100%;
+      }
+
+      // &:valid {
+      //   border: 1px solid $color-gainsboro;
+      // }
+
+      // &:invalid {
+      //   border: 1px solid $color-amaranth;
+      // }
+    }
+
+    input[type="email"] ~ svg {
+      position: absolute;
+      right: 22px;
+      bottom: 20px;
+      width: 12px;
+      height: 12px;
+      visibility: hidden;
+      cursor: pointer;
+      transition: opacity $trans-default;
+      color: $color-amaranth;
+
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
     }
 
     input[type="password"] {
       width: 309px;
+
+      @include vp-767 {
+        width: 100%;
+      }
     }
 
     input[type="password"] ~ svg {
@@ -160,7 +289,8 @@
       bottom: 15px;
       width: 24px;
       height: 24px;
-      fill: #ffffff;
+      fill: $color-default-white;
+      cursor: pointer;
     }
 
     input[type="checkbox"] {
@@ -176,6 +306,12 @@
       width: 125px;
       flex-direction: unset;
       flex-wrap: wrap;
+
+      @include vp-374 {
+        width: 100%;
+        flex-wrap: nowrap;
+        flex-direction: row;
+      }
     }
     .input__wrapper-label {
       font-size: 16px;
@@ -188,6 +324,14 @@
       text-align: right;
       z-index: 10;
       cursor: pointer;
+
+      @include vp-767 {
+        top: unset;
+        order: 3;
+        margin-left: 10px;
+        position: unset;
+        width: unset;
+      }
     }
 
     input[type="checkbox"] ~ .input__wrapper-toggle {
@@ -196,6 +340,12 @@
       height: 24px;
       width: 44px;
       display: inline;
+
+      @include vp-767 {
+        position: relative;
+        top: unset;
+        margin-left: auto;
+      }
       &::after {
         position: absolute;
         left: 0;
@@ -205,7 +355,7 @@
         width: 44px;
         height: 24px;
         border-radius: 100px;
-        background-color: $color-navy-blue;
+        background-color: $color-chost;
         border: 1px solid transparent;
       }
       &::before {
@@ -223,11 +373,12 @@
     }
     input[type="checkbox"]:checked ~ .input__wrapper-toggle {
       &::after {
-        background-color: $color-default-white;
+
+        background-color: $color-navy-blue;
         border: 1px solid $color-navy-blue;
       }
       &::before {
-        background-color: $color-navy-blue;
+        background-color: $color-default-white;
         left: unset;
         right: 2px;
       }

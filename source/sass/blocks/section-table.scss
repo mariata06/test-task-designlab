@@ -5,18 +5,41 @@
 
   .container {
     padding: 0;
+
+    @include vp-767 {
+      padding: 0 16px;
+    }
   }
 
   h2 {
     font-weight: 700;
     font-size: 48px;
     line-height: 64px;
+
+    @include vp-767 {
+      text-align: center;
+      font-size: 40px;
+      line-height: 56px;
+    }
+  }
+
+  p {
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   .table {
     // padding-left: 31px;
     border-collapse: collapse;
     width: 100%;
+
+    thead {
+      @include vp-767 {
+        display: none;
+      }
+    }
 
     th,
     td {
@@ -45,11 +68,22 @@
       padding-left: 31px;
       // padding-right: 64px;
       width: 255px;
+
+      @include vp-767 {
+        width: 100%;
+        padding-left: 0;
+        padding-left: 38%;
+      }
     }
     th:last-child,
     td:last-child {
       padding-right: 31px;
       width: 255px;
+
+      @include vp-767 {
+        width: 100%;
+        padding-right: 0;
+      }
     }
 
     td:last-child {
@@ -58,7 +92,7 @@
       text-align: right;
     }
 
-    button {
+    &__button {
       background: rgba(0, 102, 204, 0.1);
       border-radius: 4px;
       color: $color-navy-blue;
@@ -66,9 +100,62 @@
       line-height: 24px;
       font-weight: 600;
       // max-width: 98px;
+      height: 32px;
       margin-left: auto;
       margin-right: 0;
+      display: flex;
+      align-items: center;
+      transition: color $trans-default, background-color $trans-default;
+
+        &:hover {
+          background-color: $color-navy-blue;
+          color: $color-default-white;
+        }
+    }
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    @include vp-767 {
       display: block;
+		  width: 100%;
+    }
+  }
+
+  .table tr {
+    @include vp-767 {
+      margin-bottom: 15px;
+    }
+	}
+
+  .table td {
+    @include vp-767 {
+      width: 100%;
+      text-align: right;
+		  padding-left: 38%;
+      text-align: left;
+		  // text-align: right;
+		  position: relative;
+      border-top: 1px solid $color-gainsboro;
+    }
+  }
+
+  .table td::before {
+    @include vp-767 {
+      content: attr(data-label);
+      background-color: $color-chost-white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 35%;
+      padding-top: 15px;
+      padding-left: 15px;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: left;
     }
   }
 }

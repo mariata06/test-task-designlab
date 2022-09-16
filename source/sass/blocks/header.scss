@@ -5,6 +5,10 @@
 
   .container {
     display: flex;
+
+    @include vp-374 {
+      padding: 0;
+    }
   }
 
   &__logo {
