@@ -158,14 +158,15 @@ exports.webp = createWebp;
 exports.start = start;
 exports.build = build;
 
+const path = require('path');
 const ghPages = require('gulp-gh-pages');
 
-gulp.task('deploy', function() {
-  return gulp.src('./build**/*')
-    .pipe(ghPages());
-});
+// gulp.task('deploy', function() {
+//   return gulp.src('./build**/*')
+//     .pipe(ghPages());
+// });
 
-// function deploy(cb) {
-//   ghPages.publish(path.join(process.cwd(), './build'), cb);
-// }
-// exports.deploy = deploy;
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './build'), cb);
+}
+exports.deploy = deploy;
