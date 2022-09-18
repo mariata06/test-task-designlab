@@ -1,7 +1,7 @@
 .section-table {
   max-width: 884px;
   margin: 0 auto;
-  padding-bottom: 104px;
+  padding-bottom: 100px;
 
   .container {
     padding: 0;
@@ -12,9 +12,11 @@
   }
 
   h2 {
+    margin: 0;
     font-weight: 700;
     font-size: 48px;
     line-height: 64px;
+    margin-bottom: 9px;
 
     @include vp-767 {
       text-align: center;
@@ -24,6 +26,8 @@
   }
 
   p {
+    margin: 0;
+    margin-bottom: 54px;
     @include vp-767 {
       font-size: 16px;
       line-height: 24px;
@@ -60,14 +64,19 @@
       border-bottom: 1px solid #E1E1E1;
       padding-top: 11px;
       padding-bottom: 13px;
-      width: 200px;
+      // width: 200px;
+      // width: 172px;
+      // width: 189px;
+      width: 164px;
     }
 
     th:first-child,
     td:first-child {
       padding-left: 31px;
       // padding-right: 64px;
+      width: 305px;
       width: 255px;
+      width: 260px;
 
       @include vp-767 {
         width: 100%;
@@ -78,7 +87,8 @@
     th:last-child,
     td:last-child {
       padding-right: 31px;
-      width: 255px;
+      padding-right: 21px;
+      width: 235px;
 
       @include vp-767 {
         width: 100%;

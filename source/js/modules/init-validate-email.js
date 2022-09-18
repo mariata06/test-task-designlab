@@ -1,10 +1,10 @@
 const initValidateEmail = () => {
-  // const emailRegex = /^[^\s@]+@[^\s@]+$/;
-  const emailRegex = /^[-\w.]+@([\w\-\_]+\.)+[A-z]{2,11}$/i;
+  const emailRegex = /^[^\s@]+@[^\s@]+$/;
+  // const emailRegex = /^[-\w.]+@([\w\-\_]+\.)+[A-z]{2,11}$/i;
   // const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
   const cyrillicPattern = /^[\u0400-\u04FF]+$/;
   const emailInput = document.querySelector('input[type="email"]');
-  let btnDelete = document.querySelector('input[type="email"] ~ svg');
+  let btnDelete = document.querySelector('.input__delete');
   // console.log(btnDelete);
   // const inputError = document.querySelector('.subscribe__form-error');
   function validateEmail(value) {
@@ -47,7 +47,7 @@ const initValidateEmail = () => {
     btnDelete.style.visibility = 'hidden';
     // validateEmail(emailInput.value === '');
     // console.log(emailInput.value);
-    resetInput();
+    // resetInput();
   });
 
   if (emailInput) {

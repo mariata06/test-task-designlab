@@ -11,10 +11,6 @@
 
   transition: opacity $trans-default;
 
-  &--red {
-    background-color: $color-torch-red;
-  }
-
   &:disabled {
     opacity: 0.5;
 
@@ -43,6 +39,34 @@
     &.is-active {
       color: $color-default-white;
       background-color: $color-navy-blue;
+    }
+  }
+
+  &--minus {
+    border-right: 1px solid $color-gainsboro;
+    left: 1px;
+    bottom: 1px;
+    border-radius: 4px 0px 0px 4px;
+  }
+  &--plus {
+    border-left: 1px solid $color-gainsboro;
+    right: 1px;
+    bottom: 1px;
+    border-radius: 0px 4px 4px 0px;
+  }
+
+  &--minus,
+  &--plus {
+    width: 54px;
+    height: 54px;
+    color: $color-navy-blue;
+    font-size: 30px;
+    padding: 10px 20px;
+    transition: color $trans-default, background-color $trans-default;
+
+    &:hover {
+      background-color: $color-navy-blue;
+      color: $color-default-white;
     }
   }
 }

@@ -1,54 +1,60 @@
 mixin section-form()
-  section.section-form
+  section.section-form#form
     .container
       h2.section-form__title Форма
       p Должна иметь проверку полей: обязательное поле, формат, минимальное значение. При несоответствии должна выводиться соответствующая ошибка. Поле «Телефон» должен содержать маску ввода. Проверка, маска и вывод ошибки должны быть сделаны на JS или JQuery, но без плагинов.
       .section-form__wrapper
-        form(action="" method="")
+        form(action="/" method="post")
           h3 Заказать проект
           .input__wrapper
             label(for="name-project") Название
-            input(type="text" id="name-project")
+            input(type="text" id="name-project" required)
           .input__wrapper.range-slider
             label(for="price") Стоимость
-            input(type="number" value="20000000" min="0" max="100000000" step="10000000")
-            input(type="range" id="range-input" oninput="updateVal(this.value)" value="20" min="10" max="40" step="10")
-            //- .range-thumb(id="range-value")
+            .range-slider__wrapper
+              span(id="current-value") 20000000
+              input(type="range" id="custom-slider" value="20000000" min="10000000" max="40000000" step="1000000").custom-slider
             .range-slider__scale
               span 10
               span 20
               span 30
               span 40+
-
           .input__wrapper.input__wrapper--area
             label(for="area") Площадь
             .input__container
-              button(type="button" aria-label="уменьшить" class="button-minus").btn.btn--minus -
+              button(type="button" aria-label="уменьшить").btn.btn--minus -
               input(type="number" id="area" value="200")
-              button(type="button" aria-label="увеличить" class="button-minus").btn.btn--plus +
+              button(type="button" aria-label="увеличить").btn.btn--plus +
           .input__wrapper.input__wrapper--toggle
             span Отделка
             label(for="whitebox").input__wrapper-label Вайтбокс
             input(type="checkbox" id="whitebox" checked)
             span.input__wrapper-toggle
           .input__wrapper
-            label(for="tel") Телефон
-            input(type="tel" id="tel" value="+7")
+            label(for="phone") Телефон
+            input(type="tel" id="phone" value="" tabindex="0" placeholder="+7" pattern="\\+7\\s[0-9]{3}\\s\\d{3}[-]{0,1}\\d{2}[-]{0,1}\\d{2}" required)
           .input__wrapper
             label(for="email") Почта
-            input(type="email" id="email")
-            +icon("icon-delete", 12, 12)
+            input(type="email" id="email" required)
+            +icon("icon-delete", 12, 12).input__delete
+            +icon("icon-check", 16, 11).input__check
           .input__wrapper.input__wrapper--select
             label Удобства
-            .custom__select
-              select
-                option Любые
-                option Кирпичный
-                option Деревянный
-                option Монолитный
-                option Каркасный
-                option Щитовой
-              +icon("icon-select", 24, 24)
+            .custom-select
+              .custom-select__top
+                span.custom-select__current Любые
+                +icon("icon-select", 24, 24).custom-select__icon
+              .custom-select__bottom
+                .custom-select__item Кирпичный
+                .custom-select__item Деревянный
+                .custom-select__item Монолитный
+                .custom-select__item Каркасный
+                .custom-select__item Щитовой
+                .custom-select__item Кирпичный
+                .custom-select__item Деревянный
+                .custom-select__item Монолитный
+                .custom-select__item Каркасный
+                .custom-select__item Щитовой
           .input__wrapper
             label(for="user-password") Пароль
             input(type="password" id="user-password")

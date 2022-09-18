@@ -1,5 +1,5 @@
 .section-form {
-  max-width: 842px;
+  max-width: 884px;
   margin: 0 auto;
   padding-bottom: 104px;
 
@@ -14,7 +14,8 @@
   .section-form__wrapper {
     background: $color-chost-white;
     border-radius: 20px;
-    padding: 80px 96px;
+    padding: 78px 96px 80px;
+    width: 842px;
 
     @include vp-767 {
       padding: 16px;
@@ -24,8 +25,10 @@
   }
 
   .section-form__title {
+    margin: 0;
     font-size: 48px;
     line-height: 64px;
+    margin-bottom: 10px;
 
     @include vp-767 {
       width: 100%;
@@ -49,11 +52,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: column;
+    flex-direction: row;
 
     h3 {
-      font-size: 32px;
+      margin: 0;
+      width: 100%;
+      font-size: 36px;
       line-height: 40px;
-      letter-spacing: -2px;
+      // letter-spacing: -2px;
+      margin-bottom: 47px;
 
       @include vp-767 {
         width: 100%;
@@ -61,14 +69,17 @@
       }
     }
 
-    input {
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    input:not(input[type="range"]) {
       font-size: 16px;
       line-height: 24px;
       height: 56px;
       outline: none;
       border: 1px solid $color-gainsboro;
       border-radius: 4px;
-      width: 100%;
       padding-left: 16px;
       padding-right: 16px;
       transition: border-color $trans-default;
@@ -77,81 +88,42 @@
         width: 100%;
       }
 
-        &:hover,
-        &:focus {
-          border-color: $color-navy-blue;
-        }
-
-        // &:invalid {
-        //   border: 1px solid $color-amaranth;
-        // }
+      &:hover,
+      &:focus {
+        border-color: $color-navy-blue;
+      }
     }
+
     input::placeholder {
       color: $color-santas-grey;
       font-size: 16px;
       line-height: 24px;
     }
 
-    .input__wrapper--select {
-      @include vp-374 {
-        width: 100%;
-      }
+    input[type="text"] {
+      width: 100%;
     }
-
-    // .select__wrapper {
-    //   display: flex;
-    //   flex-direction: column;
-    // }
-
-    // .input__wrapper ~ input[type="number"] {
-    //   width: 222px;
-    // }
 
     .input__wrapper {
       position: relative;
       display: flex;
       flex-direction: column;
-      margin-top: 35px;
+      // margin-top: 35px;
+      margin-bottom: 38px;
 
       @include vp-767 {
         width: 100%;
       }
 
       label {
-        margin-bottom: 10px;
+        margin-bottom: 11px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
       }
 
       button {
         position: absolute;
-        width: 54px;
-        height: 54px;
-        border: 1px solid transparent;
-        color: $color-navy-blue;
-        font-size: 30px;
-        padding: 10px 20px;
-      }
-
-      .btn--minus {
-        border: 1px solid $color-gainsboro;
-        left: 1px;
-        bottom: 1px;
-        border-radius: 4px 0px 0px 4px;
-      }
-      .btn--plus {
-        border: 1px solid $color-gainsboro;
-        right: 1px;
-        bottom: 1px;
-        border-radius: 0px 4px 4px 0px;
-      }
-
-      .btn--minus,
-      .btn--plus {
-        transition: color $trans-default, background-color $trans-default;
-
-        &:hover {
-          background-color: $color-navy-blue;
-          color: $color-default-white;
-        }
       }
     }
 
@@ -175,51 +147,16 @@
       }
     }
 
-    select {
-      -webkit-appearance: none;
-      width: 309px;
-      height: 56px;
-      border-radius: 4px;
-      border: 1px solid $color-gainsboro;
-      padding-left: 16px;
-      padding-right: 16px;
-      font-size: 16px;
-      line-height: 24px;
-      color: $color-black-russain;
-      transition: border-color $trans-default;
-      outline: none;
-
-      @include vp-767 {
-        width: 100%;
-      }
-
-        &:hover,
-        &:focus {
-          border-color: $color-navy-blue;
-        }
-    }
-
-    select ~ svg {
-      position: absolute;
-      right: 10px;
-      bottom: 15px;
-    }
-
-    input[type="range"] {
-      width: 222px;
-      padding-left: 0;
-      padding-right: 0;
-
-      @include vp-767 {
-        width: 100%;
-      }
-    }
     input[type="text"] {
       width: 650px;
 
       @include vp-767 {
         width: 100%;
       }
+    }
+
+    .input__wrapper--area {
+      width: 222px;
     }
 
     .input__wrapper--area .input__container {
@@ -248,14 +185,23 @@
       @include vp-767 {
         width: 100%;
       }
+    }
 
-      // &:valid {
-      //   border: 1px solid $color-gainsboro;
-      // }
+    input[type="email"] ~ .input__delete {
+      position: absolute;
+      right: 22px;
+      bottom: 20px;
+      width: 12px;
+      height: 12px;
+      visibility: hidden;
+      cursor: pointer;
+      transition: opacity $trans-default;
+      color: $color-amaranth;
 
-      // &:invalid {
-      //   border: 1px solid $color-amaranth;
-      // }
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
     }
 
     input[type="email"] ~ svg {
@@ -290,7 +236,13 @@
       width: 24px;
       height: 24px;
       fill: $color-default-white;
+      stroke: $color-santas-grey;
       cursor: pointer;
+      transition: stroke $trans-default;
+    }
+
+    input[type="password"] ~ svg:hover {
+      stroke: $color-black-russain;
     }
 
     input[type="checkbox"] {
@@ -302,10 +254,17 @@
 
       clip: rect(0 0 0 0);
     }
+
     .input__wrapper--toggle {
       width: 125px;
       flex-direction: unset;
       flex-wrap: wrap;
+
+      span {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+      }
 
       @include vp-374 {
         width: 100%;

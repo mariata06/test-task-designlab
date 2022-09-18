@@ -253,9 +253,110 @@
 // }
 
 .custom-select {
-  position: relative;
+	margin: 0 auto;
+	position: relative;
+	width: 250px;
+  font-size: 16px;
+  line-height: 24px;
+  height: 56px;
+  border-radius: 4px;
+  border: 1px solid $color-gainsboro;
+  background-color: $color-default-white;
+  width: 309px;
 }
 
-.custom-select select {
-  display: none;
+.custom-select.is-active .custom-select__bottom {
+	display: block;
+}
+
+.custom-select.is-active .custom-select__icon {
+	transform: rotate(180deg);
+
+}
+
+.custom-select__top {
+	cursor: pointer;
+	display: flex;
+  height: 100%;
+
+}
+
+.custom-select__current {
+	font-size: 18px;
+	line-height: 24px;
+	padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-select__icon {
+	align-items: center;
+	display: flex;
+	flex-shrink: 0;
+	justify-content: center;
+	margin-left: auto;
+	text-align: center;
+	width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 35%;
+  right: 15px;
+  transition: transform $trans-default;
+}
+
+.custom-select__bottom {
+	border: 1px solid $color-gainsboro;
+  background-color: $color-default-white;
+	border-top: 0;
+	display: none;
+	left: -1px;
+	position: absolute;
+	right: 0;
+	top: calc(100% - 1px);
+  z-index: 100;
+  max-height: 275px;
+  width: 309px;
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
+  overflow-y: auto;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  &::-webkit-scrollbar-track {
+    height: 100%;
+    width: 13px;
+    background-color: $color-default-white;
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 82px;
+    border-radius: 10px;
+    // width: 4px;
+    border: 4px solid transparent;
+    background-color: $color-navy-blue;
+    background-clip: content-box;
+  }
+}
+
+.custom-select__item {
+  border-bottom: 1px solid $color-gainsboro;
+  height: 56px;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 8px;
+  transition: color $trans-default;
+  display: flex;
+  align-items: center;
+
+  &:first-child {
+    border-top: 1px solid $color-gainsboro;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-navy-blue;
+  }
 }

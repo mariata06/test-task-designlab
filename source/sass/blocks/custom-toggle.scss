@@ -10,8 +10,6 @@
     bottom: 0;
     left: 0;
 
-    color: $color-torch-red;
-
     opacity: 0;
 
     transition: opacity $trans-default;
@@ -112,15 +110,15 @@
     }
   }
 
-  &.is-invalid {
-    .custom-toggle__icon {
-      border: 1px solid $color-torch-red;
-    }
+  // &.is-invalid {
+  //   .custom-toggle__icon {
+  //     border: 1px solid $color-torch-red;
+  //   }
 
-    .custom-toggle__error {
-      opacity: 1;
-    }
-  }
+  //   .custom-toggle__error {
+  //     opacity: 1;
+  //   }
+  // }
 
   /*&.is-valid {
     label span {

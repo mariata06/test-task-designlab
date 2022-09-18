@@ -1,63 +1,6 @@
-// const initGallerySlider = () => {
-//   const mySwiper = new Swiper('.swiper-container', {
-//     loop: true,
-//     slidesPerView: 4,
-//     slidesPerColumn: 2,
-//     slidesPerGroup: 4,
-//     spaceBetween: 24,
-//     pagination: {
-//       el: '.swiper-pagination',
-//       clickable: true,
-//     },
-//     on: {
-//       init: function () {},
-//       orientationchange: function () {},
-//       beforeResize: function () {
-//         let vw = window.innerWidth;
-//         if(vw > 1000){
-//           mySwiper.params.slidesPerView = 8
-//           mySwiper.params.slidesPerColumn = 2
-//           mySwiper.params.slidesPerGroup = 4;
-//         } else {
-//           mySwiper.params.slidesPerView = 4
-//           mySwiper.params.slidesPerColumn = 2
-//           mySwiper.params.slidesPerGroup = 4;
-//         }
-//         mySwiper.init();
-//       },
-//     },
-//   });
-// };
-
-// export {initGallerySlider};
-
 const initGallerySlider = () => {
-
   let sliderItems = document.querySelectorAll('.gallery__slide');
   let filterBtn = document.querySelectorAll('.btn__filter');
-  // let sliderPagination = document.createElement('ul');
-
-  // sliderPagination.setAttribute('id', 'pagination-ul');
-  // for (let k = 1; k <= slidesCount; k++) {
-  //   let paginationItem = document.createElement('li');
-  //   paginationItem.setAttribute('data-index', k);
-  //   paginationItem.appendChild(document.createTextNode(k));
-  //   sliderPagination.appendChild(paginationItem);
-  // }
-
-  // document.getElementById('indicators').appendChild(sliderPagination);
-  // let paginationCreatedUl = document.getElementById('pagination-ul');
-  // let paginationsBullets = Array.from(document.querySelectorAll('#pagination-ul li'));
-  // for (let i = 0; i < paginationsBullets.length; i++) {
-  //   paginationsBullets[i].onclick = () => {
-
-  //   currentSlide = parseInt(this.getAttribute('data-index'));
-
-  //   // theChecker();
-  //   };
-  // }
-
-  // theChecker();
 
   for (let i = 0; i < filterBtn.length; i++) {
 
@@ -71,7 +14,6 @@ const initGallerySlider = () => {
       position = 0;
       items = document.querySelectorAll('.gallery__slide');
       itemsCount = items.length;
-      // track.style.width = '120px';
       setPosition();
       checkBtns();
 
@@ -94,8 +36,8 @@ const initGallerySlider = () => {
   let position = 0;
   let slidesToShow = 8;
   let slidesToScroll = 8;
-  let mobile = window.matchMedia('(max-width: 767px)');
-  let tablet = window.matchMedia('(max-width: 1023px)');
+  // let mobile = window.matchMedia('(max-width: 767px)');
+  // let tablet = window.matchMedia('(max-width: 1023px)');
   const container = document.querySelector('.gallery__slider');
   const track = document.querySelector('.gallery__slider-track');
   const btnPrev = document.querySelector('.gallery__btn-prev');
@@ -104,26 +46,28 @@ const initGallerySlider = () => {
   const movePosition = slidesToScroll * itemWidth;
   let items = document.querySelectorAll('.gallery__slide');
   let itemsCount = items.length;
+  let pagination = document.querySelectorAll('.pagination span');
 
-  // function myFunction(tablet) {
-  //   if (tablet.matches) { // If media query matches
-  //     document.body.style.backgroundColor = "yellow";
-  //     slidesToShow = 4;
-  //     slidesToScroll = 4;
-  //   } else {
-  //    document.body.style.backgroundColor = "pink";
-  //   }
-  // }
-  // myFunction(tablet);
-  // tablet.addListener(myFunction);
 
-  if (window.matchMedia('(max-width: 767px)').matches) {
-    slidesToShow = 4;
-    slidesToScroll = 4;
-  } else if (window.matchMedia('(max-width: 1023px)').matches) {
-    slidesToShow = 6;
-    slidesToScroll = 6;
-  }
+  let slideBulletLeft = () => {
+    for (let i = 0; i < pagination.length; i++) {
+      if (pagination[i].classList.contains('active') && (i > 0)) {
+        pagination[i].classList.remove('active');
+        pagination[i - 1].classList.add('active');
+        break;
+      }
+    }
+  };
+
+  let slideBulletRight = () => {
+    for (let i = 0; i < pagination.length; i++) {
+      if (pagination[i].classList.contains('active') && (i < pagination.length - 1)) {
+        pagination[i].classList.remove('active');
+        pagination[i + 1].classList.add('active');
+        break;
+      }
+    }
+  };
 
   items.forEach((item) => {
     item.style.minWidth = `${itemWidth}px`;
@@ -135,16 +79,17 @@ const initGallerySlider = () => {
 
     setPosition();
     checkBtns();
+    slideBulletRight();
   });
 
   btnPrev.addEventListener('click', () => {
     const itemsLeft = Math.abs(position) / itemWidth;
 
-    // position += movePosition;
     position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
 
     setPosition();
     checkBtns();
+    slideBulletLeft();
   });
 
   const setPosition = () => {

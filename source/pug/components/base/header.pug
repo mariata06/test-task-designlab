@@ -23,14 +23,13 @@ mixin header(headerMods, currentUrl)
       //- else
       //-   a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
       nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active=link.text
-                else
-                  a.main-nav__link(href=link.href)=link.text
+        //- button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        //-   +icon("icon-burger", 20, 20)
+        ul.main-nav__list
+          each link in headerLinks
+            - const activeState = currentUrl === link.href
+            li.main-nav__item
+              if(activeState)
+                span.main-nav__link.is-active=link.text
+              else
+                a.main-nav__link(href=link.href)=link.text

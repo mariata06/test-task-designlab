@@ -6,4 +6,14 @@
   font-size: 14px;
   line-height: 16px;
   color: $color-bright-grey;
+  margin-left: 12px;
+  margin-right: 12px;
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: "/";
+    position: absolute;
+    right: -17px;
+    top: 0;
+  }
 }
