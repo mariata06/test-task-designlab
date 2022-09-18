@@ -123,7 +123,8 @@ const clean = () => {
 const syncServer = () => {
   server.init({
     server: 'build/',
-    index: 'sitemap.html',
+    // index: 'sitemap.html',
+    index: 'index.html',
     notify: false,
     open: true,
     cors: true,
@@ -156,3 +157,11 @@ exports.imagemin = optimizeImages;
 exports.webp = createWebp;
 exports.start = start;
 exports.build = build;
+
+const gulp = require('gulp');
+const ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages());
+});
