@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="ProjectName — описание">
+    <meta name="description" content="Test task Design Lab">
+    <link rel="preload" href="fonts/gilroy-regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/gilroy-medium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/gilroy-semibold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/gilroy-bold.woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
@@ -107,7 +111,7 @@
                   <label for="name-project">Название</label>
                   <input type="text" id="name-project" required>
                 </div>
-                <div class="input__wrapper range-slider">
+                <div class="input__wrapper input__wrapper--slider range-slider">
                   <label for="price">Стоимость</label>
                   <div class="range-slider__wrapper"><span id="current-value">20000000</span>
                     <input class="custom-slider" type="range" id="custom-slider" value="20000000" min="10000000" max="40000000" step="1000000">
@@ -130,7 +134,7 @@
                   <label for="phone">Телефон</label>
                   <input type="tel" id="phone" value="" tabindex="0" placeholder="+7" pattern="\+7\s[0-9]{3}\s\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
                 </div>
-                <div class="input__wrapper">
+                <div class="input__wrapper input__wrapper--email">
                   <label for="email">Почта</label>
                   <input type="email" id="email" required>
                   <svg class="input__delete" width="12" height="12" aria-hidden="true">
@@ -139,6 +143,12 @@
                   <svg class="input__check" width="16" height="11" aria-hidden="true">
                     <use xlink:href="#icon-check"></use>
                   </svg>
+                </div>
+                <div class="input__wrapper input__wrapper--upload-files">
+                  <label>Приложить файлы</label>
+                  <div class="input__files">
+                    <p>Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб</p>
+                  </div>
                 </div>
                 <div class="input__wrapper input__wrapper--select">
                   <label>Удобства</label>
@@ -169,20 +179,11 @@
                     <use xlink:href="#icon-eye-off"></use>
                   </svg>
                 </div>
-                <div class="input__wrapper">
+                <div class="input__wrapper input__wrapper--wishes">
                   <label for="wishes">Пожелания</label>
                   <input type="text" id="wishes" placeholder="укажите через запятую">
                 </div>
-                <div class="tags"><span>Кондиционер
-                    <svg width="12" height="12" aria-hidden="true">
-                      <use xlink:href="#icon-delete"></use>
-                    </svg></span><span>Холодильник
-                    <svg width="12" height="12" aria-hidden="true">
-                      <use xlink:href="#icon-delete"></use>
-                    </svg></span><span>Интернет
-                    <svg width="12" height="12" aria-hidden="true">
-                      <use xlink:href="#icon-delete"></use>
-                    </svg></span></div>
+                <div class="tags"></div>
                 <button class="btn form__button" type="submit">Отправить заявку</button>
               </form>
             </div>

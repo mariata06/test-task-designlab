@@ -30,7 +30,8 @@
   &--all {
     color: $color-night-rider;
     background-color: $color-solitude;
-    border-radius: 16px;
+    border-radius: 10px;
+    padding: 4px 10px;
     padding: 4px 18px;
     font-size: 16px;
     line-height: 32px;
@@ -69,4 +70,9 @@
       color: $color-default-white;
     }
   }
+}
+
+.btn__filter {
+  margin-left: 4px;
+  margin-right: 4px;
 }

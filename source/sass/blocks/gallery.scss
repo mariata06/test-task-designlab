@@ -7,13 +7,6 @@
   // max-width: 1920px;
   margin: 0 auto;
   padding-bottom: 164px;
-  // .container {
-  //   max-width: 1792px;
-  // }
-
-  &__intro {
-    padding: 0 16px;
-  }
 
   .container {
     max-width: unset;
@@ -44,7 +37,6 @@
 
   &__slider {
     width: 100%;
-    margin-top: 63px;
     overflow: hidden;
     position: relative;
 
@@ -86,6 +78,13 @@
     }
   }
 
+  h2 {
+    margin: 0;
+    font-size: 48px;
+    line-height: 64px;
+    margin-bottom: 10px;
+  }
+
   p {
     margin: 0;
     margin-bottom: 63px;
@@ -93,7 +92,7 @@
 
   &__intro {
     margin: 0 auto;
-    margin-bottom: 63px;
+    margin-bottom: 40px;
     max-width: 884px;
   }
 

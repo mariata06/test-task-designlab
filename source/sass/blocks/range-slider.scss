@@ -2,7 +2,7 @@
   width: 222px;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 9px;
 
   span {
     font-size: 12px;
@@ -20,47 +20,18 @@
   background-color: $color-default-white;
   border: 1px solid $color-gainsboro;
   border-radius: 4px;
-  // position: absolute;
-  // z-index: 100;
-  // position: relative;
 }
 
 .range-slider input[type="range"] {
   width: 222px;
   margin: 0;
   height: 3px;
-  -webkit-appearance: none;
-  // background-color: transparent;
-  // background-color: green;
-  // height: 16px;
-  // border: none;
-  // outline: none;
-  // position: absolute;
-  // bottom: 30px;
+  // -webkit-appearance: none;
 
   @include vp-767 {
     width: 100%;
   }
 }
-
-// .range-slider input[type="range"]::-webkit-slider-runnable-track {
-//   // background-color: red;
-//   // height: 3px;
-//   width: 222px;
-//   border-radius: 100px;
-//   // position: absolute;
-//   // background-color: transparent;
-//   // bottom: 15px;
-//   border: none;
-//   height: 3px;
-
-//   -webkit-appearance: none;
-// }
-
-// .range-slider input[type="range"]::-moz-range-progress {
-//   background-color: $color-navy-blue;
-//   background-color: red;
-// }
 
 .range-slider input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -73,23 +44,5 @@
 }
 
 .range-slider .custom-slider {
-
-  --progress-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) inset;
-  --progress-flll-shadow: var(--progress-shadow);
-  --fill-color: linear-gradient(to right, LightCyan, green);
-  --thumb-shadow: 0 0 4px rgba(0, 0, 0, 0.3), -3px 9px 9px rgba(255, 255, 255, 0.33) inset, -1px 3px 2px rgba(255, 255, 255, 0.33) inset, 0 0 0 99px green inset;
-
-  &:active {
-    --thumb-shadow: inherit;
-    --thumb-transform: scale(1);
-  }
-}
-
-
-.range-slider input[type="range"]::-ms-fill-lower {
-  background-color: pink;
-}
-
-.range-slider input[type="range"]::-ms-fill-upper {
-  background-color: tomato;
+ position: absolute;
 }

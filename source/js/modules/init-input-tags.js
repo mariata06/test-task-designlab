@@ -30,17 +30,18 @@ const initInputTags = () => {
       }
 
       tagsList = document.querySelector('.tags');
+      // tagsList.style.marginTop = '16px';
       tagsItems = tagsList.querySelectorAll('span');
 
       tagsItems.forEach((item, ind) => {
         item.querySelector('svg').addEventListener('click', () => {
-          closeFunc(ind);
+          deleteFunc(ind);
         });
       });
     }
   });
 
-  function closeFunc(i) {
+  function deleteFunc(i) {
     listArr.splice(i, 1);
     newTagLi = '';
     listArr.forEach((element) => {
@@ -54,9 +55,10 @@ const initInputTags = () => {
     tagsItems = tagsList.querySelectorAll('span');
     tagsItems.forEach((item, ind) => {
       item.querySelector('svg').addEventListener('click', () => {
-        closeFunc(ind);
+        deleteFunc(ind);
       });
     });
+    tagsList.style.marginTop = '0px';
   }
 };
 

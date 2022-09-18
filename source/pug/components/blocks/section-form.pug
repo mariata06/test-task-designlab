@@ -9,7 +9,7 @@ mixin section-form()
           .input__wrapper
             label(for="name-project") Название
             input(type="text" id="name-project" required)
-          .input__wrapper.range-slider
+          .input__wrapper.input__wrapper--slider.range-slider
             label(for="price") Стоимость
             .range-slider__wrapper
               span(id="current-value") 20000000
@@ -33,11 +33,15 @@ mixin section-form()
           .input__wrapper
             label(for="phone") Телефон
             input(type="tel" id="phone" value="" tabindex="0" placeholder="+7" pattern="\\+7\\s[0-9]{3}\\s\\d{3}[-]{0,1}\\d{2}[-]{0,1}\\d{2}" required)
-          .input__wrapper
+          .input__wrapper.input__wrapper--email
             label(for="email") Почта
             input(type="email" id="email" required)
             +icon("icon-delete", 12, 12).input__delete
             +icon("icon-check", 16, 11).input__check
+          .input__wrapper.input__wrapper--upload-files
+            label Приложить файлы
+            .input__files
+              p Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб
           .input__wrapper.input__wrapper--select
             label Удобства
             .custom-select
@@ -59,14 +63,14 @@ mixin section-form()
             label(for="user-password") Пароль
             input(type="password" id="user-password")
             +icon("icon-eye-off", 24, 24)
-          .input__wrapper
+          .input__wrapper.input__wrapper--wishes
             label(for="wishes") Пожелания
             input(type="text" id="wishes" placeholder="укажите через запятую")
           .tags
-            span Кондиционер
-              +icon("icon-delete", 12, 12)
-            span Холодильник
-              +icon("icon-delete", 12, 12)
-            span Интернет
-              +icon("icon-delete", 12, 12)
+            //- span Кондиционер
+            //-   +icon("icon-delete", 12, 12)
+            //- span Холодильник
+            //-   +icon("icon-delete", 12, 12)
+            //- span Интернет
+            //-   +icon("icon-delete", 12, 12)
           button(type="submit").btn.form__button Отправить заявку

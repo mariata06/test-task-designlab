@@ -1,7 +1,7 @@
 .section-form {
   max-width: 884px;
   margin: 0 auto;
-  padding-bottom: 104px;
+  padding-bottom: 102px;
 
   .container {
     padding: 0;
@@ -14,7 +14,7 @@
   .section-form__wrapper {
     background: $color-chost-white;
     border-radius: 20px;
-    padding: 78px 96px 80px;
+    padding: 78px 96px 96px;
     width: 842px;
 
     @include vp-767 {
@@ -51,7 +51,7 @@
   form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    // justify-content: space-between;
     flex-direction: column;
     flex-direction: row;
 
@@ -109,7 +109,7 @@
       display: flex;
       flex-direction: column;
       // margin-top: 35px;
-      margin-bottom: 38px;
+      margin-bottom: 37px;
 
       @include vp-767 {
         width: 100%;
@@ -137,9 +137,11 @@
       border-radius: 4px;
       color: $color-default-white;
       background-color: $color-navy-blue;
-      margin-top: 48px;
-      padding-left: 28px;
-      padding-right: 28px;
+      // margin-top: 48px;
+      padding-left: 29px;
+      padding-right: 29px;
+      letter-spacing: -0.5px;
+      margin-top: 33px;
 
       @include vp-767 {
         margin: 0 auto;
@@ -155,8 +157,39 @@
       }
     }
 
+    .input__wrapper--wishes {
+      margin-bottom: 32px;
+      margin-bottom: 0;
+    }
+
+    .input__wrapper--upload-files .input__files {
+      border-style: dashed;
+      border: 1px dashed $color-gainsboro;
+      padding: 30px 145px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+
+      p {
+        color: $color-smoky;
+        margin: 0;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+      }
+    }
+
+    .input__wrapper--email {
+      margin-left: auto;
+    }
+
     .input__wrapper--area {
       width: 222px;
+      margin-right: 33px;
     }
 
     .input__wrapper--area .input__container {
@@ -255,6 +288,14 @@
       clip: rect(0 0 0 0);
     }
 
+    .input__wrapper--select {
+      margin-right: auto;
+    }
+
+    .input__wrapper--slider {
+      margin-right: 32px;
+    }
+
     .input__wrapper--toggle {
       width: 125px;
       flex-direction: unset;
@@ -277,7 +318,7 @@
       line-height: 24px;
       margin-left: auto;
       position: absolute;
-      top: 60px;
+      top: 48px;
       right: 0;
       width: 100%;
       text-align: right;
@@ -295,7 +336,7 @@
 
     input[type="checkbox"] ~ .input__wrapper-toggle {
       position: absolute;
-      top: 60px;
+      top: 48px;
       height: 24px;
       width: 44px;
       display: inline;
