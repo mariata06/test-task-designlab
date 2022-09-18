@@ -41,27 +41,3 @@
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
 }
-
-.scroll-lock-ios {
-  position: fixed;
-
-  overflow: hidden;
-}
-
-.scroll-lock {
-  overflow: hidden;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-.no-transition {
-  /* stylelint-disable-next-line */
-  transition: none !important;
-}

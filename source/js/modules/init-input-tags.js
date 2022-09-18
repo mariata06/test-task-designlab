@@ -9,7 +9,7 @@ const initInputTags = () => {
   tagsItems.forEach((item, ind) => {
     listArr.push(item.textContent);
     item.querySelector('svg').addEventListener('click', () => {
-      closeFunc(ind);
+      deleteFunc(ind);
     });
   });
 
@@ -18,7 +18,6 @@ const initInputTags = () => {
       if (input.value !== '') {
         let inValue = e.target.value;
         listArr = inValue.split(',');
-        // listArr.push(inValue.replace(/\s/g, ''));
         newTagLi = '';
         listArr.forEach((element) => {
           newTagLi += `<span> ${element}<svg width="24" height="24" aria-hidden="true">
@@ -30,7 +29,6 @@ const initInputTags = () => {
       }
 
       tagsList = document.querySelector('.tags');
-      // tagsList.style.marginTop = '16px';
       tagsItems = tagsList.querySelectorAll('span');
 
       tagsItems.forEach((item, ind) => {
@@ -58,7 +56,6 @@ const initInputTags = () => {
         deleteFunc(ind);
       });
     });
-    tagsList.style.marginTop = '0px';
   }
 };
 

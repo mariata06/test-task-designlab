@@ -1,10 +1,4 @@
-// .gallery__intro {
-//   max-width: 884px;
-//   margin: 0 auto;
-// }
-
 .gallery {
-  // max-width: 1920px;
   margin: 0 auto;
   padding-bottom: 164px;
 
@@ -12,6 +6,28 @@
     max-width: unset;
     @include vp-767 {
       padding: 0 16px;
+    }
+  }
+
+  &__filter {
+    text-align: center;
+    @include vp-767 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__filter-btn {
+    margin-left: 4px;
+    margin-right: 4px;
+
+    @include vp-767 {
+      margin: 0;
+    }
+
+    @include vp-374 {
+      margin-bottom: 16px;
     }
   }
 
@@ -29,9 +45,20 @@
       margin-right: 8px;
       margin-left: 8px;
 
+      @include vp-767 {
+        width: 12px;
+        height: 12px;
+        margin-left: 6px;
+        margin-right: 6px;
+      }
+
       &.active {
         background-color: $color-navy-blue;
       }
+    }
+
+    @include vp-767 {
+      margin-top: 24px;
     }
   }
 
@@ -73,33 +100,68 @@
     background: #fff;
 
     @include vp-767 {
+      img {
+        width: 167px;
+        height: 94px;
+      }
+    }
+
+    @include vp-374 {
       width: 167px;
       height: 94px;
     }
   }
 
-  h2 {
+  &__title {
     margin: 0;
     font-size: 48px;
     line-height: 64px;
     margin-bottom: 10px;
+
+    @include vp-767 {
+      font-size: 40px;
+      line-height: 56px;
+      text-align: center;
+      margin-bottom: 19px;
+    }
   }
 
-  p {
+  &__paragraph {
     margin: 0;
     margin-bottom: 63px;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 38px;
+    }
   }
 
   &__intro {
     margin: 0 auto;
     margin-bottom: 40px;
     max-width: 884px;
+
+    @include vp-767 {
+      margin-bottom: 26px;
+    }
+
+    .container {
+      padding: 0 64px;
+
+      @include vp-1023 {
+        padding: 0 24px;
+      }
+
+      @include vp-767 {
+        padding: 0 16px;
+      }
+    }
   }
 
   &__btn-prev,
   &__btn-next {
     opacity: 0;
-    // transition: opacity $trans-default;
     cursor: pointer;
     border: none;
     position: absolute;
@@ -119,6 +181,8 @@
     svg {
       color: $color-navy-blue;
       transition: color $trans-default;
+      width: 21px;
+      height: 21px;
     }
 
     &:disabled {
@@ -140,11 +204,8 @@
   &__btn-prev {
     left: 97px;
   }
+
   &__btn-next {
     right: 97px;
-  }
-
-  &__filter {
-    text-align: center;
   }
 }

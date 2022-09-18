@@ -103,54 +103,54 @@
         <section class="section-form" id="form">
           <div class="container">
             <h2 class="section-form__title">Форма</h2>
-            <p>Должна иметь проверку полей: обязательное поле, формат, минимальное значение. При несоответствии должна выводиться соответствующая ошибка. Поле «Телефон» должен содержать маску ввода. Проверка, маска и вывод ошибки должны быть сделаны на JS или JQuery, но без плагинов.</p>
+            <p class="section-form__paragraph">Должна иметь проверку полей: обязательное поле, формат, минимальное значение. При несоответствии должна выводиться соответствующая ошибка. Поле «Телефон» должен содержать маску ввода. Проверка, маска и вывод ошибки должны быть сделаны на JS или JQuery, но без плагинов.</p>
             <div class="section-form__wrapper">
               <form action="/" method="post">
-                <h3>Заказать проект</h3>
-                <div class="input__wrapper">
+                <h3 class="section-form__heading">Заказать проект</h3>
+                <div class="input-wrapper">
                   <label for="name-project">Название</label>
                   <input type="text" id="name-project" required>
                 </div>
-                <div class="input__wrapper input__wrapper--slider range-slider">
-                  <label for="price">Стоимость</label>
+                <div class="input-wrapper input-wrapper--slider range-slider">
+                  <label for="custom-slider">Стоимость</label>
                   <div class="range-slider__wrapper"><span id="current-value">20000000</span>
                     <input class="custom-slider" type="range" id="custom-slider" value="20000000" min="10000000" max="40000000" step="1000000">
                   </div>
                   <div class="range-slider__scale"><span>10</span><span>20</span><span>30</span><span>40+</span></div>
                 </div>
-                <div class="input__wrapper input__wrapper--area">
+                <div class="input-wrapper input-wrapper--area">
                   <label for="area">Площадь</label>
-                  <div class="input__container">
+                  <div class="input-wrapper__container">
                     <button class="btn btn--minus" type="button" aria-label="уменьшить">-</button>
                     <input type="number" id="area" value="200">
                     <button class="btn btn--plus" type="button" aria-label="увеличить">+</button>
                   </div>
                 </div>
-                <div class="input__wrapper input__wrapper--toggle"><span>Отделка</span>
-                  <label class="input__wrapper-label" for="whitebox">Вайтбокс</label>
-                  <input type="checkbox" id="whitebox" checked><span class="input__wrapper-toggle"></span>
+                <div class="input-wrapper input-wrapper--toggle"><span>Отделка</span>
+                  <label class="input-wrapper__label" for="whitebox">Вайтбокс</label>
+                  <input type="checkbox" id="whitebox" checked><span class="input-wrapper__toggle"></span>
                 </div>
-                <div class="input__wrapper">
+                <div class="input-wrapper">
                   <label for="phone">Телефон</label>
                   <input type="tel" id="phone" value="" tabindex="0" placeholder="+7" pattern="\+7\s[0-9]{3}\s\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
                 </div>
-                <div class="input__wrapper input__wrapper--email">
+                <div class="input-wrapper input-wrapper--email">
                   <label for="email">Почта</label>
                   <input type="email" id="email" required>
-                  <svg class="input__delete" width="12" height="12" aria-hidden="true">
+                  <svg class="input-wrapper__icon input-wrapper__icon--delete" width="12" height="12" aria-hidden="true">
                     <use xlink:href="#icon-delete"></use>
                   </svg>
-                  <svg class="input__check" width="16" height="11" aria-hidden="true">
+                  <svg class="input-wrapper__icon input-wrapper__icon--check" width="16" height="11" aria-hidden="true">
                     <use xlink:href="#icon-check"></use>
                   </svg>
                 </div>
-                <div class="input__wrapper input__wrapper--upload-files">
+                <div class="input-wrapper input-wrapper--upload-files">
                   <label>Приложить файлы</label>
-                  <div class="input__files">
-                    <p>Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб</p>
+                  <div class="input-wrapper__files-content">
+                    <p class="input-wrapper__paragraph">Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб</p>
                   </div>
                 </div>
-                <div class="input__wrapper input__wrapper--select">
+                <div class="input-wrapper input-wrapper--select">
                   <label>Удобства</label>
                   <div class="custom-select">
                     <div class="custom-select__top"><span class="custom-select__current">Любые</span>
@@ -172,370 +172,372 @@
                     </div>
                   </div>
                 </div>
-                <div class="input__wrapper">
+                <div class="input-wrapper input-wrapper--password">
                   <label for="user-password">Пароль</label>
                   <input type="password" id="user-password">
                   <svg width="24" height="24" aria-hidden="true">
                     <use xlink:href="#icon-eye-off"></use>
                   </svg>
                 </div>
-                <div class="input__wrapper input__wrapper--wishes">
+                <div class="input-wrapper input-wrapper--wishes">
                   <label for="wishes">Пожелания</label>
                   <input type="text" id="wishes" placeholder="укажите через запятую">
                 </div>
                 <div class="tags"></div>
-                <button class="btn form__button" type="submit">Отправить заявку</button>
+                <button class="btn btn--submit section-form__button" type="submit">Отправить заявку</button>
               </form>
             </div>
           </div>
         </section>
         <section class="gallery" id="gallery">
           <div class="gallery__intro">
-            <h2 class="gallery__title">Галерея</h2>
-            <p>Фильтры должны фильтровать изображения без перезагрузки. Адаптивность: между реперными точками — пропорциональное масштабирование, далее уменьшение кол-ва фото в строке. Пролистывание должно быть по 8 фото (страницами) для дектопа, по 4 фото на мобилке. Стрелки появляются только при наведении на блок с фото. Галерея должна быть сделана на JS или JQuery, но без плагинов.</p>
-            <div class="gallery__filter">
-              <button class="btn btn__filter btn--bath" data-filter="bath">Бани</button>
-              <button class="btn btn__filter btn--sauna" data-filter="sauna">Сауны</button>
-              <button class="btn btn__filter btn--hamam" data-filter="hamam">Хаммамы</button>
-              <button class="btn btn__filter btn--all" data-filter="all">Всё</button>
+            <div class="container">
+              <h2 class="gallery__title">Галерея</h2>
+              <p class="gallery__paragraph">Фильтры должны фильтровать изображения без перезагрузки. Адаптивность: между реперными точками — пропорциональное масштабирование, далее уменьшение кол-ва фото в строке. Пролистывание должно быть по 8 фото (страницами) для дектопа, по&nbsp;4 фото на мобилке. Стрелки появляются только при наведении на блок с фото. Галерея должна быть сделана на&nbsp;JS&nbsp;или JQuery, но без плагинов.</p>
+              <div class="gallery__filter">
+                <button class="btn gallery__filter-btn btn--filter" type="button" data-filter="bath">Бани</button>
+                <button class="btn gallery__filter-btn btn--filter" type="button" data-filter="sauna">Сауны</button>
+                <button class="btn gallery__filter-btn btn--filter" type="button" data-filter="hamam">Хаммамы</button>
+                <button class="btn gallery__filter-btn btn--filter" type="button" data-filter="all">Всё</button>
+              </div>
             </div>
           </div>
-          <div class="container">
-            <div class="gallery__slider">
+          <div class="gallery__slider">
+            <div class="container">
               <div class="gallery__slider-track">
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-1.webp, img/slides/sauna-1@2x.webp 2x"><img src="img/slides/sauna-1.png" srcset="img/slides/sauna-1@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-1.webp, img/slides/sauna-1@2x.webp 2x"><img src="img/slides/sauna-1.png" srcset="img/slides/sauna-1@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-2.webp, img/slides/hamam-2@2x.webp 2x"><img src="img/slides/hamam-2.png" srcset="img/slides/hamam-2@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-2.webp, img/slides/hamam-2@2x.webp 2x"><img src="img/slides/hamam-2.png" srcset="img/slides/hamam-2@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-3.webp, img/slides/bath-3@2x.webp 2x"><img src="img/slides/bath-3.png" srcset="img/slides/bath-3@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-3.webp, img/slides/bath-3@2x.webp 2x"><img src="img/slides/bath-3.png" srcset="img/slides/bath-3@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-4.webp, img/slides/sauna-4@2x.webp 2x"><img src="img/slides/sauna-4.png" srcset="img/slides/sauna-4@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-4.webp, img/slides/sauna-4@2x.webp 2x"><img src="img/slides/sauna-4.png" srcset="img/slides/sauna-4@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-5.webp, img/slides/sauna-5@2x.webp 2x"><img src="img/slides/sauna-5.png" srcset="img/slides/sauna-5@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-5.webp, img/slides/sauna-5@2x.webp 2x"><img src="img/slides/sauna-5.png" srcset="img/slides/sauna-5@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-6.webp, img/slides/hamam-6@2x.webp 2x"><img src="img/slides/hamam-6.png" srcset="img/slides/hamam-6@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-6.webp, img/slides/hamam-6@2x.webp 2x"><img src="img/slides/hamam-6.png" srcset="img/slides/hamam-6@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-7.webp, img/slides/sauna-7@2x.webp 2x"><img src="img/slides/sauna-7.png" srcset="img/slides/sauna-7@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-7.webp, img/slides/sauna-7@2x.webp 2x"><img src="img/slides/sauna-7.png" srcset="img/slides/sauna-7@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-8.webp, img/slides/bath-8@2x.webp 2x"><img src="img/slides/bath-8.png" srcset="img/slides/bath-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-8.webp, img/slides/bath-8@2x.webp 2x"><img src="img/slides/bath-8.png" srcset="img/slides/bath-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-1.webp, img/slides/bath-1@2x.webp 2x"><img src="img/slides/bath-1.png" srcset="img/slides/bath-1@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-1.webp, img/slides/bath-1@2x.webp 2x"><img src="img/slides/bath-1.png" srcset="img/slides/bath-1@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-2.webp, img/slides/sauna-2@2x.webp 2x"><img src="img/slides/sauna-2.png" srcset="img/slides/sauna-2@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-2.webp, img/slides/sauna-2@2x.webp 2x"><img src="img/slides/sauna-2.png" srcset="img/slides/sauna-2@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-3.webp, img/slides/hamam-3@2x.webp 2x"><img src="img/slides/hamam-3.png" srcset="img/slides/hamam-3@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-3.webp, img/slides/hamam-3@2x.webp 2x"><img src="img/slides/hamam-3.png" srcset="img/slides/hamam-3@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-4.webp, img/slides/bath-4@2x.webp 2x"><img src="img/slides/bath-4.png" srcset="img/slides/bath-4@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-4.webp, img/slides/bath-4@2x.webp 2x"><img src="img/slides/bath-4.png" srcset="img/slides/bath-4@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-5.webp, img/slides/hamam-5@2x.webp 2x"><img src="img/slides/hamam-5.png" srcset="img/slides/hamam-5@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-5.webp, img/slides/hamam-5@2x.webp 2x"><img src="img/slides/hamam-5.png" srcset="img/slides/hamam-5@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-6.webp, img/slides/bath-6@2x.webp 2x"><img src="img/slides/bath-6.png" srcset="img/slides/bath-6@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-6.webp, img/slides/bath-6@2x.webp 2x"><img src="img/slides/bath-6.png" srcset="img/slides/bath-6@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-7.webp, img/slides/hamam-7@2x.webp 2x"><img src="img/slides/hamam-7.png" srcset="img/slides/hamam-7@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-7.webp, img/slides/hamam-7@2x.webp 2x"><img src="img/slides/hamam-7.png" srcset="img/slides/hamam-7@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-8.webp, img/slides/sauna-8@2x.webp 2x"><img src="img/slides/sauna-8.png" srcset="img/slides/sauna-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-8.webp, img/slides/sauna-8@2x.webp 2x"><img src="img/slides/sauna-8.png" srcset="img/slides/sauna-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-1.webp, img/slides/hamam-1@2x.webp 2x"><img src="img/slides/hamam-1.png" srcset="img/slides/hamam-1@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-1.webp, img/slides/hamam-1@2x.webp 2x"><img src="img/slides/hamam-1.png" srcset="img/slides/hamam-1@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-2.webp, img/slides/bath-2@2x.webp 2x"><img src="img/slides/bath-2.png" srcset="img/slides/bath-2@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-2.webp, img/slides/bath-2@2x.webp 2x"><img src="img/slides/bath-2.png" srcset="img/slides/bath-2@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-3.webp, img/slides/sauna-3@2x.webp 2x"><img src="img/slides/sauna-3.png" srcset="img/slides/sauna-3@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-3.webp, img/slides/sauna-3@2x.webp 2x"><img src="img/slides/sauna-3.png" srcset="img/slides/sauna-3@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-4.webp, img/slides/hamam-4@2x.webp 2x"><img src="img/slides/hamam-4.png" srcset="img/slides/hamam-4@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-4.webp, img/slides/hamam-4@2x.webp 2x"><img src="img/slides/hamam-4.png" srcset="img/slides/hamam-4@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-5.webp, img/slides/bath-5@2x.webp 2x"><img src="img/slides/bath-5.png" srcset="img/slides/bath-5@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-5.webp, img/slides/bath-5@2x.webp 2x"><img src="img/slides/bath-5.png" srcset="img/slides/bath-5@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-6.webp, img/slides/sauna-6@2x.webp 2x"><img src="img/slides/sauna-6.png" srcset="img/slides/sauna-6@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-6.webp, img/slides/sauna-6@2x.webp 2x"><img src="img/slides/sauna-6.png" srcset="img/slides/sauna-6@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-7.webp, img/slides/bath-7@2x.webp 2x"><img src="img/slides/bath-7.png" srcset="img/slides/bath-7@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-7.webp, img/slides/bath-7@2x.webp 2x"><img src="img/slides/bath-7.png" srcset="img/slides/bath-7@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-8.webp, img/slides/hamam-8@2x.webp 2x"><img src="img/slides/hamam-8.png" srcset="img/slides/hamam-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-8.webp, img/slides/hamam-8@2x.webp 2x"><img src="img/slides/hamam-8.png" srcset="img/slides/hamam-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-8.webp, img/slides/bath-8@2x.webp 2x"><img src="img/slides/bath-8.png" srcset="img/slides/bath-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-8.webp, img/slides/bath-8@2x.webp 2x"><img src="img/slides/bath-8.png" srcset="img/slides/bath-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-1.webp, img/slides/bath-1@2x.webp 2x"><img src="img/slides/bath-1.png" srcset="img/slides/bath-1@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-1.webp, img/slides/bath-1@2x.webp 2x"><img src="img/slides/bath-1.png" srcset="img/slides/bath-1@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-2.webp, img/slides/sauna-2@2x.webp 2x"><img src="img/slides/sauna-2.png" srcset="img/slides/sauna-2@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-2.webp, img/slides/sauna-2@2x.webp 2x"><img src="img/slides/sauna-2.png" srcset="img/slides/sauna-2@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-3.webp, img/slides/hamam-3@2x.webp 2x"><img src="img/slides/hamam-3.png" srcset="img/slides/hamam-3@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-3.webp, img/slides/hamam-3@2x.webp 2x"><img src="img/slides/hamam-3.png" srcset="img/slides/hamam-3@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-4.webp, img/slides/bath-4@2x.webp 2x"><img src="img/slides/bath-4.png" srcset="img/slides/bath-4@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-4.webp, img/slides/bath-4@2x.webp 2x"><img src="img/slides/bath-4.png" srcset="img/slides/bath-4@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-5.webp, img/slides/hamam-5@2x.webp 2x"><img src="img/slides/hamam-5.png" srcset="img/slides/hamam-5@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-5.webp, img/slides/hamam-5@2x.webp 2x"><img src="img/slides/hamam-5.png" srcset="img/slides/hamam-5@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-6.webp, img/slides/bath-6@2x.webp 2x"><img src="img/slides/bath-6.png" srcset="img/slides/bath-6@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-6.webp, img/slides/bath-6@2x.webp 2x"><img src="img/slides/bath-6.png" srcset="img/slides/bath-6@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-7.webp, img/slides/hamam-7@2x.webp 2x"><img src="img/slides/hamam-7.png" srcset="img/slides/hamam-7@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-7.webp, img/slides/hamam-7@2x.webp 2x"><img src="img/slides/hamam-7.png" srcset="img/slides/hamam-7@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-1.webp, img/slides/bath-1@2x.webp 2x"><img src="img/slides/bath-1.png" srcset="img/slides/bath-1@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-1.webp, img/slides/bath-1@2x.webp 2x"><img src="img/slides/bath-1.png" srcset="img/slides/bath-1@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-2.webp, img/slides/sauna-2@2x.webp 2x"><img src="img/slides/sauna-2.png" srcset="img/slides/sauna-2@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-2.webp, img/slides/sauna-2@2x.webp 2x"><img src="img/slides/sauna-2.png" srcset="img/slides/sauna-2@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-3.webp, img/slides/hamam-3@2x.webp 2x"><img src="img/slides/hamam-3.png" srcset="img/slides/hamam-3@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-3.webp, img/slides/hamam-3@2x.webp 2x"><img src="img/slides/hamam-3.png" srcset="img/slides/hamam-3@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-4.webp, img/slides/bath-4@2x.webp 2x"><img src="img/slides/bath-4.png" srcset="img/slides/bath-4@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-4.webp, img/slides/bath-4@2x.webp 2x"><img src="img/slides/bath-4.png" srcset="img/slides/bath-4@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-5.webp, img/slides/hamam-5@2x.webp 2x"><img src="img/slides/hamam-5.png" srcset="img/slides/hamam-5@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-5.webp, img/slides/hamam-5@2x.webp 2x"><img src="img/slides/hamam-5.png" srcset="img/slides/hamam-5@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-6.webp, img/slides/bath-6@2x.webp 2x"><img src="img/slides/bath-6.png" srcset="img/slides/bath-6@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-6.webp, img/slides/bath-6@2x.webp 2x"><img src="img/slides/bath-6.png" srcset="img/slides/bath-6@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-7.webp, img/slides/hamam-7@2x.webp 2x"><img src="img/slides/hamam-7.png" srcset="img/slides/hamam-7@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-7.webp, img/slides/hamam-7@2x.webp 2x"><img src="img/slides/hamam-7.png" srcset="img/slides/hamam-7@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-8.webp, img/slides/sauna-8@2x.webp 2x"><img src="img/slides/sauna-8.png" srcset="img/slides/sauna-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-8.webp, img/slides/sauna-8@2x.webp 2x"><img src="img/slides/sauna-8.png" srcset="img/slides/sauna-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-5.webp, img/slides/sauna-5@2x.webp 2x"><img src="img/slides/sauna-5.png" srcset="img/slides/sauna-5@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-5.webp, img/slides/sauna-5@2x.webp 2x"><img src="img/slides/sauna-5.png" srcset="img/slides/sauna-5@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-6.webp, img/slides/hamam-6@2x.webp 2x"><img src="img/slides/hamam-6.png" srcset="img/slides/hamam-6@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-6.webp, img/slides/hamam-6@2x.webp 2x"><img src="img/slides/hamam-6.png" srcset="img/slides/hamam-6@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-7.webp, img/slides/sauna-7@2x.webp 2x"><img src="img/slides/sauna-7.png" srcset="img/slides/sauna-7@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-7.webp, img/slides/sauna-7@2x.webp 2x"><img src="img/slides/sauna-7.png" srcset="img/slides/sauna-7@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-8.webp, img/slides/bath-8@2x.webp 2x"><img src="img/slides/bath-8.png" srcset="img/slides/bath-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-8.webp, img/slides/bath-8@2x.webp 2x"><img src="img/slides/bath-8.png" srcset="img/slides/bath-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-1.webp, img/slides/bath-1@2x.webp 2x"><img src="img/slides/bath-1.png" srcset="img/slides/bath-1@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-1.webp, img/slides/bath-1@2x.webp 2x"><img src="img/slides/bath-1.png" srcset="img/slides/bath-1@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-2.webp, img/slides/sauna-2@2x.webp 2x"><img src="img/slides/sauna-2.png" srcset="img/slides/sauna-2@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-2.webp, img/slides/sauna-2@2x.webp 2x"><img src="img/slides/sauna-2.png" srcset="img/slides/sauna-2@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-3.webp, img/slides/hamam-3@2x.webp 2x"><img src="img/slides/hamam-3.png" srcset="img/slides/hamam-3@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-3.webp, img/slides/hamam-3@2x.webp 2x"><img src="img/slides/hamam-3.png" srcset="img/slides/hamam-3@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-4.webp, img/slides/bath-4@2x.webp 2x"><img src="img/slides/bath-4.png" srcset="img/slides/bath-4@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-4.webp, img/slides/bath-4@2x.webp 2x"><img src="img/slides/bath-4.png" srcset="img/slides/bath-4@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-2.webp, img/slides/bath-2@2x.webp 2x"><img src="img/slides/bath-2.png" srcset="img/slides/bath-2@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-2.webp, img/slides/bath-2@2x.webp 2x"><img src="img/slides/bath-2.png" srcset="img/slides/bath-2@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-3.webp, img/slides/sauna-3@2x.webp 2x"><img src="img/slides/sauna-3.png" srcset="img/slides/sauna-3@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-3.webp, img/slides/sauna-3@2x.webp 2x"><img src="img/slides/sauna-3.png" srcset="img/slides/sauna-3@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-4.webp, img/slides/hamam-4@2x.webp 2x"><img src="img/slides/hamam-4.png" srcset="img/slides/hamam-4@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-4.webp, img/slides/hamam-4@2x.webp 2x"><img src="img/slides/hamam-4.png" srcset="img/slides/hamam-4@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-5.webp, img/slides/bath-5@2x.webp 2x"><img src="img/slides/bath-5.png" srcset="img/slides/bath-5@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-5.webp, img/slides/bath-5@2x.webp 2x"><img src="img/slides/bath-5.png" srcset="img/slides/bath-5@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-6.webp, img/slides/sauna-6@2x.webp 2x"><img src="img/slides/sauna-6.png" srcset="img/slides/sauna-6@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-6.webp, img/slides/sauna-6@2x.webp 2x"><img src="img/slides/sauna-6.png" srcset="img/slides/sauna-6@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-7.webp, img/slides/bath-7@2x.webp 2x"><img src="img/slides/bath-7.png" srcset="img/slides/bath-7@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-7.webp, img/slides/bath-7@2x.webp 2x"><img src="img/slides/bath-7.png" srcset="img/slides/bath-7@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-8.webp, img/slides/hamam-8@2x.webp 2x"><img src="img/slides/hamam-8.png" srcset="img/slides/hamam-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-8.webp, img/slides/hamam-8@2x.webp 2x"><img src="img/slides/hamam-8.png" srcset="img/slides/hamam-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-8.webp, img/slides/bath-8@2x.webp 2x"><img src="img/slides/bath-8.png" srcset="img/slides/bath-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-8.webp, img/slides/bath-8@2x.webp 2x"><img src="img/slides/bath-8.png" srcset="img/slides/bath-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-5.webp, img/slides/hamam-5@2x.webp 2x"><img src="img/slides/hamam-5.png" srcset="img/slides/hamam-5@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-5.webp, img/slides/hamam-5@2x.webp 2x"><img src="img/slides/hamam-5.png" srcset="img/slides/hamam-5@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-6.webp, img/slides/bath-6@2x.webp 2x"><img src="img/slides/bath-6.png" srcset="img/slides/bath-6@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-6.webp, img/slides/bath-6@2x.webp 2x"><img src="img/slides/bath-6.png" srcset="img/slides/bath-6@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-7.webp, img/slides/hamam-7@2x.webp 2x"><img src="img/slides/hamam-7.png" srcset="img/slides/hamam-7@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-7.webp, img/slides/hamam-7@2x.webp 2x"><img src="img/slides/hamam-7.png" srcset="img/slides/hamam-7@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-8.webp, img/slides/sauna-8@2x.webp 2x"><img src="img/slides/sauna-8.png" srcset="img/slides/sauna-8@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-8.webp, img/slides/sauna-8@2x.webp 2x"><img src="img/slides/sauna-8.png" srcset="img/slides/sauna-8@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-1.webp, img/slides/hamam-1@2x.webp 2x"><img src="img/slides/hamam-1.png" srcset="img/slides/hamam-1@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-1.webp, img/slides/hamam-1@2x.webp 2x"><img src="img/slides/hamam-1.png" srcset="img/slides/hamam-1@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="bath">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/bath-2.webp, img/slides/bath-2@2x.webp 2x"><img src="img/slides/bath-2.png" srcset="img/slides/bath-2@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/bath-2.webp, img/slides/bath-2@2x.webp 2x"><img src="img/slides/bath-2.png" srcset="img/slides/bath-2@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="sauna">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/sauna-3.webp, img/slides/sauna-3@2x.webp 2x"><img src="img/slides/sauna-3.png" srcset="img/slides/sauna-3@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/sauna-3.webp, img/slides/sauna-3@2x.webp 2x"><img src="img/slides/sauna-3.png" srcset="img/slides/sauna-3@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
                 <div class="gallery__slide" data-type="hamam">
                   <picture>
-                    <source type="image/webp" srcset="img/slides/hamam-4.webp, img/slides/hamam-4@2x.webp 2x"><img src="img/slides/hamam-4.png" srcset="img/slides/hamam-4@2x.png 2x" width="430" height="242">
+                    <source type="image/webp" srcset="img/slides/hamam-4.webp, img/slides/hamam-4@2x.webp 2x"><img src="img/slides/hamam-4.png" srcset="img/slides/hamam-4@2x.png 2x" width="430" height="242" alt="Проект сауны">
                   </picture>
                 </div>
               </div>
-              <button class="gallery__btn-prev">
+              <button class="gallery__btn-prev" type="button">
                 <svg width="32" height="32" aria-hidden="true">
                   <use xlink:href="#icon-arrow-left"></use>
                 </svg>
               </button>
-              <button class="gallery__btn-next">
+              <button class="gallery__btn-next" type="button">
                 <svg width="32" height="32" aria-hidden="true">
                   <use xlink:href="#icon-arrow-right"></use>
                 </svg>
               </button>
               <div class="indicators" id="indicators"></div>
-              <div class="gallery__slider-pagination pagination"><span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gallery__slider-pagination"><span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             </div>
           </div>
         </section>

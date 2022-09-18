@@ -16,18 +16,12 @@
   &__link {
     color: $color-night-rider;
     font-size: 16px;
+    font-weight: 500;
+    transition: color $trans-default;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $color-navy-blue;
     }
-
-    &.is-active {
-      opacity: 0.6;
-      color: $color-navy-blue;
-    }
-  }
-
-  &__toggle {
-    display: none;
   }
 }

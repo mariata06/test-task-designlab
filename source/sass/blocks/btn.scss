@@ -1,12 +1,10 @@
 .btn {
   display: inline-flex;
-  // margin: 10px 0;
   padding: 10px 14px;
 
   color: $color-default-white;
   background-color: $color-default-white;
   border: none;
-  // border: 1px solid #E1E1E1;
   cursor: pointer;
 
   transition: opacity $trans-default;
@@ -20,18 +18,14 @@
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {
-      opacity: 0.8;
+      opacity: 0.7;
     }
   }
 
-  &--bath,
-  &--sauna,
-  &--hamam,
-  &--all {
+  &--filter {
     color: $color-night-rider;
     background-color: $color-solitude;
     border-radius: 10px;
-    padding: 4px 10px;
     padding: 4px 18px;
     font-size: 16px;
     line-height: 32px;
@@ -49,6 +43,7 @@
     bottom: 1px;
     border-radius: 4px 0px 0px 4px;
   }
+
   &--plus {
     border-left: 1px solid $color-gainsboro;
     right: 1px;
@@ -70,9 +65,19 @@
       color: $color-default-white;
     }
   }
-}
 
-.btn__filter {
-  margin-left: 4px;
-  margin-right: 4px;
+  &--submit {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    height: 56px;
+    border-radius: 4px;
+    color: $color-default-white;
+    background-color: $color-navy-blue;
+    padding-left: 29px;
+    padding-right: 29px;
+    letter-spacing: -0.5px;
+  }
 }

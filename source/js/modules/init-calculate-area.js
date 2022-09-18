@@ -1,10 +1,9 @@
 const initCalculateArea = () => {
   let minusBtn = document.querySelector('.btn--minus');
   let plusBtn = document.querySelector('.btn--plus');
-  let areaWrapper = document.querySelector('.input__wrapper--area');
+  let areaWrapper = document.querySelector('.input-wrapper--area');
 
   if (areaWrapper) {
-
     let inputNumber = areaWrapper.querySelector('input');
 
     minusBtn.addEventListener('click', (e) => {

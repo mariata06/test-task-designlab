@@ -1,9 +1,3 @@
-@mixin retina {
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    @content;
-  }
-}
-
 // Desktop first
 
 @mixin vp-1919 {

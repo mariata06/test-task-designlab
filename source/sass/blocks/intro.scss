@@ -5,6 +5,10 @@
   .container {
     padding: 0;
 
+    @include vp-1023 {
+      padding: 0 24px;
+    }
+
     @include vp-767 {
       padding: 0 16px;
     }
@@ -15,6 +19,11 @@
   margin: 0 auto;
   margin-top: 75px;
   margin-bottom: 10px;
+
+  @include vp-767 {
+    margin-top: 43px;
+    margin-bottom: 6px;
+  }
 }
 
 .intro__title {
@@ -28,5 +37,6 @@
   @include vp-767 {
     font-size: 48px;
     line-height: 48px;
+    margin-bottom: 46px;
   }
 }

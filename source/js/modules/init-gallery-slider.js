@@ -1,6 +1,6 @@
 const initGallerySlider = () => {
   let sliderItems = document.querySelectorAll('.gallery__slide');
-  let filterBtn = document.querySelectorAll('.btn__filter');
+  let filterBtn = document.querySelectorAll('.gallery__filter-btn');
 
   for (let i = 0; i < filterBtn.length; i++) {
 
@@ -36,8 +36,6 @@ const initGallerySlider = () => {
   let position = 0;
   let slidesToShow = 8;
   let slidesToScroll = 8;
-  // let mobile = window.matchMedia('(max-width: 767px)');
-  // let tablet = window.matchMedia('(max-width: 1023px)');
   const container = document.querySelector('.gallery__slider');
   const track = document.querySelector('.gallery__slider-track');
   const btnPrev = document.querySelector('.gallery__btn-prev');
@@ -46,7 +44,7 @@ const initGallerySlider = () => {
   const movePosition = slidesToScroll * itemWidth;
   let items = document.querySelectorAll('.gallery__slide');
   let itemsCount = items.length;
-  let pagination = document.querySelectorAll('.pagination span');
+  let pagination = document.querySelectorAll('.gallery__slider-pagination span');
 
 
   let slideBulletLeft = () => {
