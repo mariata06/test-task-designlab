@@ -200,23 +200,23 @@ mixin gallery()
       .container
         h2.gallery__title Галерея
         p.gallery__paragraph Фильтры должны фильтровать изображения без перезагрузки. Адаптивность: между реперными точками — пропорциональное масштабирование, далее уменьшение кол-ва фото в строке. Пролистывание должно быть по 8 фото (страницами) для дектопа, по&nbsp;4 фото на мобилке. Стрелки появляются только при наведении на блок с фото. Галерея должна быть сделана на&nbsp;JS&nbsp;или JQuery, но без плагинов.
-        .gallery__filter
-          button.btn.gallery__filter-btn.btn--filter(type="button" data-filter="bath") Бани
-          button.btn.gallery__filter-btn.btn--filter(type="button" data-filter="sauna") Сауны
-          button.btn.gallery__filter-btn.btn--filter(type="button" data-filter="hamam") Хаммамы
-          button.btn.gallery__filter-btn.btn--filter(type="button" data-filter="all") Всё
-    .gallery__slider
+        .gallery__filter.filter
+          button.btn.filter__btn.btn--gray(type="button" data-filter="bath") Бани
+          button.btn.filter__btn.btn--gray(type="button" data-filter="sauna") Сауны
+          button.btn.filter__btn.btn--gray(type="button" data-filter="hamam") Хаммамы
+          button.btn.filter__btn.btn--gray(type="button" data-filter="all") Всё
+    .gallery__slider.slider
       .container
-        .gallery__slider-track
+        .slider__track
           each picture in gallerySlider
-            .gallery__slide(data-type = `${picture.dataAttr}`)
+            .slider__slide(data-type = `${picture.dataAttr}`)
               +picture(picture.path, picture.img, picture.format, picture.width, picture.height, picture.altText)
-        button(type="button").gallery__btn-prev
+        button(type="button").slider__btn-prev.btn.btn--prev
           +icon("icon-arrow-left", 32, 32)
-        button(type="button").gallery__btn-next
+        button(type="button").slider__btn-next.btn.btn--next
           +icon("icon-arrow-right", 32, 32)
         #indicators(class="indicators")
-        .gallery__slider-pagination
+        .slider__pagination.pagination
           span.active
           span
           span

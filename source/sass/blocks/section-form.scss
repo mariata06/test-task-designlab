@@ -63,8 +63,6 @@
     }
   }
 
-
-
   form {
     display: flex;
     flex-wrap: wrap;
@@ -129,14 +127,6 @@
       }
     }
 
-    // input[type="text"] {
-    //   width: 100%;
-
-    //   // @include vp-1023 {
-    //   //   width: 100%;
-    //   // }
-    // }
-
     .input-wrapper {
       position: relative;
       display: flex;
@@ -165,7 +155,6 @@
     }
 
     .input-wrapper--wishes {
-      margin-bottom: 32px;
       margin-bottom: 0;
 
       @include vp-767 {
@@ -410,19 +399,18 @@
       @include vp-767 {
         position: relative;
         top: unset;
-        margin-left: auto;
         margin-left: 89px;
       }
 
       @include vp-374 {
-        margin-left: unset;
         margin-left: auto;
       }
+
       &::after {
         position: absolute;
         left: 0;
         top: 0;
-        content: '';
+        content: "";
         display: block;
         width: 44px;
         height: 24px;
@@ -430,11 +418,12 @@
         background-color: $color-chost;
         border: 1px solid transparent;
       }
+
       &::before {
         position: absolute;
         left: 2px;
         top: 2px;
-        content: '';
+        content: "";
         display: block;
         width: 20px;
         height: 20px;

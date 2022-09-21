@@ -1,0 +1,74 @@
+.slider {
+  overflow: hidden;
+  position: relative;
+  width: 1792px;
+  margin: 0 auto;
+
+  @include vp-1023 {
+    width: 896px;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  &:hover {
+    .slider__btn-prev,
+    .slider__btn-next {
+      opacity: 1;
+    }
+  }
+
+  &__track {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 430px);
+    grid-auto-flow: column dense;
+    grid-template-rows: 242px 242px;
+    grid-gap: 24px;
+    max-height: 508px;
+
+    @include vp-767 {
+      grid-template-columns: repeat(auto-fill, 167px);
+      grid-template-rows: 94px 94px;
+      grid-gap: 10px;
+    }
+  }
+
+  &__slide {
+    width: 430px;
+    height: 242px;
+    text-align: center;
+    font-size: 18px;
+    background: $color-default-white;
+
+    @include vp-767 {
+      img {
+        width: 167px;
+        height: 94px;
+      }
+    }
+
+    @include vp-374 {
+      width: 167px;
+      height: 94px;
+    }
+  }
+
+  &__btn-prev {
+    left: 97px;
+  }
+
+  &__btn-next {
+    right: 97px;
+  }
+
+  &__pagination {
+    margin: 0 auto;
+    margin-top: 44px;
+
+    @include vp-767 {
+      margin-top: 24px;
+    }
+  }
+}

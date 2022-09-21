@@ -1,8 +1,8 @@
 mixin section-table()
   section.section-table#table
     .container
-      h2 Таблица
-      p Должна быть адаптивной, без дублирования информации.
+      h2.section-table__title Таблица
+      p.section-table__paragraph Должна быть адаптивной, без дублирования информации.
       table.table
         thead
           tr
@@ -14,24 +14,22 @@ mixin section-table()
             td(data-label="Материал") Ольха
             td(data-label="Размер") 13 	&#215; 78 	&#215; 300 мм
             td(data-label="Цена") 52 ₽
-              button(type="button").btn.table__button В корзину
+              button(type="button" data-open-modal="cart").btn.btn--light-blue.table__button В корзину
           tr
             td(data-label="Название") Стеновой паркет
             td(data-label="Материал") Ольха
             td(data-label="Размер") 13 	&#215; 78 	&#215; 600 мм
             td(data-label="Цена") 112 ₽
-              button(type="button").btn.table__button В корзину
+              button(type="button" data-open-modal="cart").btn.btn--light-blue.table__button В корзину
           tr
             td(data-label="Название") Доска для пола, сорт А
             td(data-label="Материал") Лиственница
             td(data-label="Размер") 27 	&#215; 134 	&#215; 2000 мм
             td(data-label="Цена") 1062 ₽
-              button(type="button").btn.table__button В корзину
+              button(type="button" data-open-modal="cart").btn.btn--light-blue.table__button В корзину
           tr
             td(data-label="Название") Вагонка
             td(data-label="Материал") Термо-абаш
             td(data-label="Размер") 19 	&#215; 90 	&#215; 2000 мм
             td(data-label="Цена") 1009 ₽
-              button(type="button").btn.table__button В корзину
-
-
+              button(type="button" data-open-modal="cart").btn.btn--light-blue.table__button В корзину

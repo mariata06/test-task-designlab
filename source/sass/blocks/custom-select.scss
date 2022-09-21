@@ -1,7 +1,6 @@
 .custom-select {
-	margin: 0 auto;
-	position: relative;
-	width: 250px;
+  margin: 0 auto;
+  position: relative;
   font-size: 16px;
   line-height: 24px;
   height: 56px;
@@ -16,35 +15,32 @@
 }
 
 .custom-select.is-active .custom-select__bottom {
-	display: block;
+  display: block;
 }
 
 .custom-select.is-active .custom-select__icon {
-	transform: rotate(180deg);
-
+  transform: rotate(180deg);
 }
 
 .custom-select__top {
-	cursor: pointer;
-	display: flex;
+  cursor: pointer;
+  display: flex;
   height: 100%;
 }
 
 .custom-select__bottom {
-	border: 1px solid $color-gainsboro;
+  border: 1px solid $color-gainsboro;
   background-color: $color-default-white;
-	border-top: 0;
-	display: none;
-	left: -1px;
-	position: absolute;
-	right: 0;
-	top: calc(100% - 1px);
+  border-top: 0;
+  display: none;
+  left: -1px;
+  position: absolute;
+  right: 0;
+  top: calc(100% - 1px);
   z-index: 100;
   max-height: 275px;
   width: 309px;
-  border-radius: 0px 0px 4px 4px;
-  overflow: hidden;
-  overflow-y: auto;
+  border-radius: 0 0 4px 4px;
   overflow-y: scroll;
 
   @include vp-767 {
@@ -71,21 +67,21 @@
 }
 
 .custom-select__current {
-	font-size: 18px;
-	line-height: 24px;
-	padding: 8px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 8px;
   display: flex;
   align-items: center;
 }
 
 .custom-select__icon {
-	align-items: center;
-	display: flex;
-	flex-shrink: 0;
-	justify-content: center;
-	margin-left: auto;
-	text-align: center;
-	width: 24px;
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  margin-left: auto;
+  text-align: center;
+  width: 24px;
   height: 24px;
   position: absolute;
   top: 35%;
@@ -96,10 +92,10 @@
 .custom-select__item {
   border-bottom: 1px solid $color-gainsboro;
   height: 56px;
-	cursor: pointer;
-	font-size: 16px;
-	line-height: 24px;
-	padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px;
   transition: color $trans-default;
   display: flex;
   align-items: center;

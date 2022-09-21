@@ -12,7 +12,7 @@ mixin section-form()
           .input-wrapper.input-wrapper--slider.range-slider
             label(for="custom-slider") Стоимость
             .range-slider__wrapper
-              span(id="current-value") 20000000
+              span(id="current-value").range-slider__current-value 20000000
               input(type="range" id="custom-slider" value="20000000" min="10000000" max="40000000" step="1000000").custom-slider
             .range-slider__scale
               span 10
@@ -73,4 +73,4 @@ mixin section-form()
             //-   +icon("icon-delete", 12, 12)
             //- span Интернет
             //-   +icon("icon-delete", 12, 12)
-          button(type="submit").btn.btn--submit.section-form__button Отправить заявку
+          button(type="submit").btn.btn--blue.section-form__button Отправить заявку

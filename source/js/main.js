@@ -5,11 +5,11 @@ import {initValidateEmail} from './modules/init-validate-email';
 import {initValidatePhone} from './modules/init-validate-phone';
 import {initInputTags} from './modules/init-input-tags';
 import {initCustomSelect} from './modules/init-custom-select';
+import {initModal} from './modules/init-modal';
 
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-
   initCalculateArea();
   initPriceRange();
 
@@ -19,5 +19,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initValidatePhone();
     initInputTags();
     initCustomSelect();
+    initModal();
   });
 });

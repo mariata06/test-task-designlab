@@ -1,19 +1,12 @@
 .btn {
   display: inline-flex;
   padding: 10px 14px;
-
   color: $color-default-white;
   background-color: $color-default-white;
   border: none;
   cursor: pointer;
 
   transition: opacity $trans-default;
-
-  &:disabled {
-    opacity: 0.5;
-
-    pointer-events: none;
-  }
 
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
@@ -22,7 +15,41 @@
     }
   }
 
-  &--filter {
+  &--light-blue {
+    background: rgba(0, 102, 204, 0.1);
+    border-radius: 4px;
+    color: $color-navy-blue;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    transition: color $trans-default, background-color $trans-default;
+
+    &:hover,
+    &:focus {
+      background-color: $color-navy-blue;
+      color: $color-default-white;
+    }
+  }
+
+  &--blue {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    height: 56px;
+    border-radius: 4px;
+    color: $color-default-white;
+    background-color: $color-navy-blue;
+    padding-left: 29px;
+    padding-right: 29px;
+    letter-spacing: -0.5px;
+  }
+
+  &--gray {
     color: $color-night-rider;
     background-color: $color-solitude;
     border-radius: 10px;
@@ -34,6 +61,7 @@
     &.is-active {
       color: $color-default-white;
       background-color: $color-navy-blue;
+      pointer-events: none;
     }
   }
 
@@ -41,14 +69,14 @@
     border-right: 1px solid $color-gainsboro;
     left: 1px;
     bottom: 1px;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 4px 0 0 4px;
   }
 
   &--plus {
     border-left: 1px solid $color-gainsboro;
     right: 1px;
     bottom: 1px;
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 0 4px 4px 0;
   }
 
   &--minus,
@@ -66,18 +94,52 @@
     }
   }
 
-  &--submit {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 600;
-    height: 56px;
-    border-radius: 4px;
-    color: $color-default-white;
-    background-color: $color-navy-blue;
-    padding-left: 29px;
-    padding-right: 29px;
-    letter-spacing: -0.5px;
+  &--prev,
+  &--next {
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    bottom: 45%;
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    background-color: $color-default-white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 0.1px 0.3px rgba(0, 0, 0, 0.01), 0 0.3px 0.8px rgba(0, 0, 0, 0.02), 0 0.5px 1.5px rgba(0, 0, 0, 0.03), 0 0.9px 2.7px rgba(0, 0, 0, 0.03), 0 1.7px 5px rgba(0, 0, 0, 0.04);
+    transition: opacity $trans-default, background-color $trans-default;
+
+    @include vp-767 {
+      display: none;
+    }
+
+    svg {
+      color: $color-navy-blue;
+      transition: color $trans-default;
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      pointer-events: none;
+
+      svg {
+        opacity: 0.7;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-navy-blue;
+
+      svg {
+        color: $color-default-white;
+      }
+    }
   }
 }

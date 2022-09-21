@@ -9,17 +9,17 @@ $color-transparent:                 rgba(255, 255, 255, 0);
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
 $color-night-rider:                 #333333;
-$color-navy-blue:                   #0066CC;
-$color-bright-grey:                 #52575F;
-$color-chost-white:                 #F5F5F7;
-$color-santas-grey:                 #9B9B9E;
+$color-navy-blue:                   #0066cc;
+$color-bright-grey:                 #52575f;
+$color-chost-white:                 #f5f5f7;
+$color-santas-grey:                 #9b9b9e;
 $color-black-russain:               #1d1d1f;
-$color-smoky:                       #58585D;
-$color-chost:                       #BABAC2;
-$color-amaranth:                    #DC3545;
-$color-gainsboro:                   #E1E1E1;
-$color-solitude:                    #F2F4F7;
-$color-whisper:                     #E6E6E6;
+$color-smoky:                       #58585d;
+$color-chost:                       #babac2;
+$color-amaranth:                    #dc3545;
+$color-gainsboro:                   #e1e1e1;
+$color-solitude:                    #f2f4f7;
+$color-whisper:                     #e6e6e6;
 
 // Typography
 // ---------------------------------
@@ -30,6 +30,7 @@ $ff-placeholder:                    "Gilroy", "Arial", sans-serif;
 // Animation
 // ---------------------------------
 
+$trans-modal:                       0.6s cubic-bezier(0.55, 0, 0.1, 1);
 $tf-default:                        ease;
 $trans-default:                     0.3s $tf-default;
 

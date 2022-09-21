@@ -17,6 +17,19 @@
   }
 }
 
+.scroll-lock {
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .rouble {
   font-family: $ff-rouble;
   /* stylelint-disable */

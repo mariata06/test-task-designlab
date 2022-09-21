@@ -1,0 +1,114 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  th,
+  td {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  th {
+    font-weight: 600;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid $color-gainsboro;
+    border-bottom: 1px solid $color-gainsboro;
+    background-color: $color-chost-white;
+  }
+
+  td {
+    border-bottom: 1px solid $color-gainsboro;
+    padding-top: 11px;
+    padding-bottom: 13px;
+    width: 164px;
+
+    @include vp-767 {
+      width: 100%;
+      padding-left: 37%;
+      text-align: left;
+      position: relative;
+      padding-top: 15px;
+      padding-bottom: 14px;
+      border-top: 1px solid $color-gainsboro;
+    }
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 31px;
+    width: 260px;
+
+    @include vp-767 {
+      width: 100%;
+      padding-left: 37%;
+    }
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 21px;
+    width: 235px;
+
+    @include vp-767 {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  td:last-child {
+    display: flex;
+    align-items: center;
+    text-align: right;
+  }
+
+  &__button {
+    margin-left: auto;
+    margin-right: 0;
+
+    @include vp-767 {
+      margin-right: 17px;
+    }
+  }
+}
+
+.table,
+.table tbody,
+.table tr,
+.table td {
+  @include vp-767 {
+    display: block;
+    width: 100%;
+  }
+}
+
+.table tr {
+  @include vp-767 {
+    margin-bottom: 14px;
+  }
+}
+
+.table td::before {
+  @include vp-767 {
+    content: attr(data-label);
+    background-color: $color-chost-white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 32%;
+    padding-top: 12px;
+    padding-left: 15px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    text-align: left;
+  }
+}

@@ -15,7 +15,7 @@
   }
 }
 
-.range-slider #current-value {
+.range-slider .range-slider__current-value {
   width: 222px;
   height: 56px;
   display: flex;
@@ -41,7 +41,6 @@
 }
 
 .range-slider input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
   display: block;
   width: 16px;
   height: 16px;
@@ -51,5 +50,5 @@
 }
 
 .range-slider .custom-slider {
- position: absolute;
+  position: absolute;
 }
