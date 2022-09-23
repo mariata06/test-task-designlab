@@ -9,6 +9,12 @@
   margin-left: 12px;
   margin-right: 12px;
   position: relative;
+  transition: opacity $trans-default;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
 
   &:not(:last-child)::after {
     content: "/";

@@ -99,19 +99,12 @@
     opacity: 0;
     cursor: pointer;
     border: none;
-    position: absolute;
-    bottom: 45%;
-    padding: 20px;
     width: 80px;
     height: 80px;
     border-radius: 100px;
     background-color: $color-default-white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 0.1px 0.3px rgba(0, 0, 0, 0.01), 0 0.3px 0.8px rgba(0, 0, 0, 0.02), 0 0.5px 1.5px rgba(0, 0, 0, 0.03), 0 0.9px 2.7px rgba(0, 0, 0, 0.03), 0 1.7px 5px rgba(0, 0, 0, 0.04);
     transition: opacity $trans-default, background-color $trans-default;
-
-    @include vp-767 {
-      display: none;
-    }
 
     svg {
       color: $color-navy-blue;

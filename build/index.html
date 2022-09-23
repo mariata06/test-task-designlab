@@ -105,7 +105,7 @@
             <h2 class="section-form__title">Форма</h2>
             <p class="section-form__paragraph">Должна иметь проверку полей: обязательное поле, формат, минимальное значение. При несоответствии должна выводиться соответствующая ошибка. Поле «Телефон» должен содержать маску ввода. Проверка, маска и вывод ошибки должны быть сделаны на JS или JQuery, но без плагинов.</p>
             <div class="section-form__wrapper">
-              <form action="/" method="post">
+              <form action="https://echo.htmlacademy.ru" method="post">
                 <h3 class="section-form__heading">Заказать проект</h3>
                 <div class="input-wrapper">
                   <label for="name-project">Название</label>
@@ -113,7 +113,8 @@
                 </div>
                 <div class="input-wrapper input-wrapper--slider range-slider">
                   <label for="custom-slider">Стоимость</label>
-                  <div class="range-slider__wrapper"><span class="range-slider__current-value" id="current-value">20000000</span>
+                  <div class="range-slider__wrapper">
+                    <input class="range-slider__current-value" type="number" id="current-value" value="20000000"><span>₽</span>
                     <input class="custom-slider" type="range" id="custom-slider" value="20000000" min="10000000" max="40000000" step="1000000">
                   </div>
                   <div class="range-slider__scale"><span>10</span><span>20</span><span>30</span><span>40+</span></div>
@@ -122,7 +123,7 @@
                   <label for="area">Площадь</label>
                   <div class="input-wrapper__container">
                     <button class="btn btn--minus" type="button" aria-label="уменьшить">-</button>
-                    <input type="number" id="area" value="200">
+                    <input type="number" id="area" value="200" min="1" max="10000"><span>м<sup>2</sup></span>
                     <button class="btn btn--plus" type="button" aria-label="увеличить">+</button>
                   </div>
                 </div>
@@ -144,11 +145,13 @@
                     <use xlink:href="#icon-check"></use>
                   </svg>
                 </div>
-                <div class="input-wrapper input-wrapper--upload-files">
+                <div class="input-wrapper input-wrapper--upload">
                   <label>Приложить файлы</label>
-                  <div class="input-wrapper__files-content">
-                    <p class="input-wrapper__paragraph">Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб</p>
+                  <div class="input-wrapper__upload">
+                    <input class="ad-form__input visually-hidden" type="file" id="images" name="images">
+                    <label class="ad-form__drop-zone" for="images">Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб</label>
                   </div>
+                  <div class="input-wrapper__files"></div>
                 </div>
                 <div class="input-wrapper input-wrapper--select">
                   <label>Удобства</label>
@@ -536,7 +539,6 @@
                   <use xlink:href="#icon-arrow-right"></use>
                 </svg>
               </button>
-              <div class="indicators" id="indicators"></div>
               <div class="slider__pagination pagination"><span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             </div>
           </div>

@@ -4,8 +4,28 @@
   width: 1792px;
   margin: 0 auto;
 
+  @include vp-1919 {
+    width: 1672px;
+  }
+
+  @include vp-1689 {
+    width: 1272px;
+  }
+
+  @include vp-1279 {
+    width: 1060px;
+  }
+
   @include vp-1023 {
-    width: 896px;
+    width: 884px;
+  }
+
+  @include vp-767 {
+    width: 374px;
+  }
+
+  @include vp-374 {
+    width: 320px;
   }
 
   .container {
@@ -28,10 +48,38 @@
     grid-gap: 24px;
     max-height: 508px;
 
+    @include vp-1919 {
+      grid-template-columns: repeat(auto-fill, 400px);
+      grid-template-rows: 242px 242px;
+    }
+
+    @include vp-1689 {
+      grid-template-columns: repeat(auto-fill, 300px);
+      grid-template-rows: 200px 200px;
+    }
+
+    @include vp-1279 {
+      grid-template-columns: repeat(auto-fill, 250px);
+      grid-gap: 20px;
+      grid-template-rows: 200px 200px;
+    }
+
+    @include vp-1023 {
+      grid-template-columns: repeat(auto-fill, 430px);
+      grid-gap: 24px;
+      grid-template-rows: 242px 242px;
+    }
+
     @include vp-767 {
-      grid-template-columns: repeat(auto-fill, 167px);
-      grid-template-rows: 94px 94px;
-      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fill, 175px);
+      grid-template-rows: 150px 150px;
+      grid-gap: 24px;
+    }
+
+    @include vp-374 {
+      grid-template-columns: repeat(auto-fill, 152px);
+      grid-template-rows: 100px 100px;
+      grid-gap: 16px;
     }
   }
 
@@ -42,16 +90,51 @@
     font-size: 18px;
     background: $color-default-white;
 
+    @include vp-1919 {
+      width: 400px;
+      height: 242px;
+    }
+
+    @include vp-1689 {
+      width: 300px;
+      height: 200px;
+    }
+
+    @include vp-1279 {
+      width: 250px;
+      height: 200px;
+    }
+
+    @include vp-1023 {
+      width: 430px;
+      height: 242px;
+    }
+
     @include vp-767 {
-      img {
-        width: 167px;
-        height: 94px;
-      }
+      width: 175px;
+      height: 150px;
     }
 
     @include vp-374 {
-      width: 167px;
-      height: 94px;
+      width: 152px;
+      height: 100px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__btn-prev,
+  &__btn-next {
+    position: absolute;
+    bottom: 48%;
+    padding: 20px;
+
+    @include vp-767 {
+      display: none;
     }
   }
 

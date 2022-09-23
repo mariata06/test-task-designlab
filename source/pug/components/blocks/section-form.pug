@@ -4,7 +4,7 @@ mixin section-form()
       h2.section-form__title Форма
       p.section-form__paragraph Должна иметь проверку полей: обязательное поле, формат, минимальное значение. При несоответствии должна выводиться соответствующая ошибка. Поле «Телефон» должен содержать маску ввода. Проверка, маска и вывод ошибки должны быть сделаны на JS или JQuery, но без плагинов.
       .section-form__wrapper
-        form(action="/" method="post")
+        form(action="https://echo.htmlacademy.ru" method="post")
           h3.section-form__heading Заказать проект
           .input-wrapper
             label(for="name-project") Название
@@ -12,7 +12,9 @@ mixin section-form()
           .input-wrapper.input-wrapper--slider.range-slider
             label(for="custom-slider") Стоимость
             .range-slider__wrapper
-              span(id="current-value").range-slider__current-value 20000000
+              //- span(id="current-value").range-slider__current-value 20&nbsp;000&nbsp;000
+              input(type="number" id="current-value" value="20000000").range-slider__current-value
+              span ₽
               input(type="range" id="custom-slider" value="20000000" min="10000000" max="40000000" step="1000000").custom-slider
             .range-slider__scale
               span 10
@@ -23,7 +25,9 @@ mixin section-form()
             label(for="area") Площадь
             .input-wrapper__container
               button(type="button" aria-label="уменьшить").btn.btn--minus -
-              input(type="number" id="area" value="200")
+              input(type="number" id="area" value="200" min="1" max="10000")
+              span м
+                sup 2
               button(type="button" aria-label="увеличить").btn.btn--plus +
           .input-wrapper.input-wrapper--toggle
             span Отделка
@@ -38,10 +42,12 @@ mixin section-form()
             input(type="email" id="email" required)
             +icon("icon-delete", 12, 12).input-wrapper__icon.input-wrapper__icon--delete
             +icon("icon-check", 16, 11).input-wrapper__icon.input-wrapper__icon--check
-          .input-wrapper.input-wrapper--upload-files
+          .input-wrapper.input-wrapper--upload
             label Приложить файлы
-            .input-wrapper__files-content
-              p.input-wrapper__paragraph Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб
+            .input-wrapper__upload
+              input(type="file" id="images" name="images").ad-form__input.visually-hidden
+              label(for="images").ad-form__drop-zone Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб
+            .input-wrapper__files
           .input-wrapper.input-wrapper--select
             label Удобства
             .custom-select

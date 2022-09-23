@@ -37,6 +37,9 @@ const initGallerySlider = () => {
   let position = 0;
   let slidesToShow = 8;
   let slidesToScroll = 8;
+  const mobileQuery = window.matchMedia('(max-width: 767px)');
+  const tabletQuery = window.matchMedia('(max-width: 1023px)');
+
   const container = document.querySelector('.slider');
   const track = document.querySelector('.slider__track');
   const btnPrev = document.querySelector('.slider__btn-prev');
@@ -47,6 +50,12 @@ const initGallerySlider = () => {
   let itemsCount = items.length;
   let pagination = document.querySelectorAll('.slider__pagination span');
 
+  if (mobileQuery.matches) {
+    console.log('Mobile Query Matched!');
+  }
+  if (tabletQuery.matches) {
+    console.log('Tablet Query Matched!');
+  }
   // console.log(pagination.length);
 
   let slideBulletLeft = () => {
