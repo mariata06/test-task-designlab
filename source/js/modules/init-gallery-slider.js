@@ -6,7 +6,6 @@ const initGallerySlider = () => {
 
     filterBtn[i].addEventListener('click', (e) => {
       e.preventDefault();
-      resetPagination();
       for (let j = 0; j < filterBtn.length; j++) {
         filterBtn[j].classList.remove('is-active');
       }
@@ -20,94 +19,99 @@ const initGallerySlider = () => {
 
       const filter = e.target.dataset.filter;
 
+      itemsCount = 0;
       sliderItems.forEach((item) => {
         if (filter === 'all') {
           item.style.display = 'block';
+          itemsCount = items.length;
         } else {
           if (item.dataset.type === filter) {
             item.style.display = 'block';
+            itemsCount += 1;
           } else {
             item.style.display = 'none';
           }
         }
       });
+      renderBullet(itemsCount / slidesToShow);
     });
   }
 
   let position = 0;
   let slidesToShow = 8;
   let slidesToScroll = 8;
-  const mobileQuery = window.matchMedia('(max-width: 767px)');
-  const tabletQuery = window.matchMedia('(max-width: 1023px)');
-
+  let slideGap = 24;
+  // const mobileQuery = window.matchMedia('(max-width: 767px)');
+  // const tabletQuery = window.matchMedia('(max-width: 1023px)');
   const container = document.querySelector('.slider');
   const track = document.querySelector('.slider__track');
   const btnPrev = document.querySelector('.slider__btn-prev');
   const btnNext = document.querySelector('.slider__btn-next');
-  const itemWidth = container.clientWidth / slidesToShow;
-  const movePosition = slidesToScroll * itemWidth;
+  // ширина слайда = (ширина контейнера + лишний gap в конце слайда) / 4 = 454
+  const itemWidth = (container.clientWidth + slideGap) / slidesToShow;
+  const movePosition = (slidesToScroll * itemWidth) - slideGap;
   let items = document.querySelectorAll('.slider__slide');
   let itemsCount = items.length;
-  let pagination = document.querySelectorAll('.slider__pagination span');
 
-  if (mobileQuery.matches) {
-    console.log('Mobile Query Matched!');
-  }
-  if (tabletQuery.matches) {
-    console.log('Tablet Query Matched!');
-  }
+  let paginationItems = [];
+  const renderBullet = (n) => {
+    document.querySelector('.slider__pagination').innerHTML = '';
+    for (let i = 0; i < n; i++) {
+      document.querySelector('.slider__pagination').appendChild(document.createElement('span'));
+    }
+    paginationItems = document.querySelector('.slider__pagination').childNodes;
+    paginationItems[0].classList.add('active');
+
+    // Переключение булетов пагинации мышкой
+    for (let m = 0; m < paginationItems.length; m++) {
+      paginationItems[m].addEventListener('click', (e) => {
+        e.preventDefault();
+        for (let i = 0; i < paginationItems.length; i++) {
+          paginationItems[i].classList.remove('active');
+        }
+        paginationItems[m].classList.add('active');
+
+        position = -m * (movePosition + slideGap);
+        setPosition();
+        checkBtns();
+      });
+    }
+  };
+
+  renderBullet(itemsCount / slidesToShow);
+
+  // Для таблета и мобилы
+  // if (mobileQuery.matches) {
+  //   console.log('Mobile Query Matched!');
+  // }
+  // if (tabletQuery.matches) {
+  //   console.log('Tablet Query Matched!');
+  // }
   // console.log(pagination.length);
 
   let slideBulletLeft = () => {
-    for (let i = 0; i < pagination.length; i++) {
-      if (pagination[i].classList.contains('active') && (i > 0)) {
-        pagination[i].classList.remove('active');
-        pagination[i - 1].classList.add('active');
+    for (let i = 0; i < paginationItems.length; i++) {
+      if (paginationItems[i].classList.contains('active') && (i > 0)) {
+        paginationItems[i].classList.remove('active');
+        paginationItems[i - 1].classList.add('active');
         break;
       }
     }
   };
 
   let slideBulletRight = () => {
-    for (let i = 0; i < pagination.length; i++) {
-      if (pagination[i].classList.contains('active') && (i < pagination.length - 1)) {
-        pagination[i].classList.remove('active');
-        pagination[i + 1].classList.add('active');
+    for (let i = 0; i < paginationItems.length; i++) {
+      if (paginationItems[i].classList.contains('active') && (i < paginationItems.length - 1)) {
+        paginationItems[i].classList.remove('active');
+        paginationItems[i + 1].classList.add('active');
         break;
       }
     }
   };
 
-  // Ресет текущего булета при каждом выборе кнопкой фильтр
-  let resetPagination = () => {
-    pagination.forEach((item) => {
-      if (item.classList.contains('active')) {
-        item.classList.remove('active');
-      }
-      pagination[0].classList.add('active');
-    });
-  };
-
-  // Переключение булетов пагинации мышкой
-  for (let m = 0; m < pagination.length; m++) {
-    pagination[m].addEventListener('click', (e) => {
-      e.preventDefault();
-      for (let i = 0; i < pagination.length; i++) {
-        pagination[i].classList.remove('active');
-      }
-      pagination[m].classList.add('active');
-
-    });
-  }
-
-  items.forEach((item) => {
-    item.style.minWidth = `${itemWidth}px`;
-  });
-
   btnNext.addEventListener('click', () => {
     const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
-    position -= itemsLeft >= slidesToScroll ? movePosition + 24 : itemsLeft * itemWidth;
-    // console.log(position);
+    position -= itemsLeft >= slidesToScroll ? movePosition + slideGap : itemsLeft * itemWidth;
 
     setPosition();
     checkBtns();
@@ -116,7 +120,7 @@ const initGallerySlider = () => {
 
   btnPrev.addEventListener('click', () => {
     const itemsLeft = Math.abs(position) / itemWidth;
-    position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+    position += itemsLeft >= slidesToScroll ? movePosition + slideGap : itemsLeft * itemWidth;
 
     setPosition();
     checkBtns();
